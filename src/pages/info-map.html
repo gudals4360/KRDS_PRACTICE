@@ -1,43 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
-  <head>
-    <!--@include head-->
-    <title>전시안내도 · 종합안내 | 천연기념물센터</title>
-    <meta name="description" content="천연기념물센터 전시안내도와 관람 순서를 안내합니다." />
-  </head>
-  <body>
-    <!--@include header-->
-
-    <main id="main">
-      <section class="page-hero" aria-label="천연기념물센터 소개 배너">
-        <img class="page-hero__bg" src="./images/hero/pine-960.webp" srcset="./images/hero/pine-960.webp 960w, ./images/hero/pine.webp 1920w" sizes="100vw" width="1920" height="332" alt="" fetchpriority="high" />
-        <div class="page-hero__box">
-          <p class="page-hero__en">Natural Heritage Center</p>
-          <p>국내 유일의 자연유산 전문 전시관</p>
-          <p class="page-hero__name">천연기념물센터</p>
-        </div>
-      </section>
-
-      <div class="container sub-body">
-        <div class="page-title"><h1>종합안내</h1></div>
-        <nav class="pill-tabs" aria-label="종합안내 탭"><a class="pill-tabs__tab" href="./info-overview.html">설립개요</a><a class="pill-tabs__tab" href="./info-facility.html">시설현황</a><a class="pill-tabs__tab" href="./info-map.html" aria-current="page">전시안내도</a></nav>
-        <div class="sub-content">
-          <section aria-labelledby="h-map">
-            <h2 class="sub-h2 sub-h2--lg" id="h-map">전시안내도</h2>
-            <!-- TODO: 지도 위 번호 핀은 이미지에 포함된 상태(선택 시 사진이 바뀌는 상호작용은 Figma에 정의되지 않아 미구현) -->
-            <figure class="map-box"><img src="./images/pages/exhibit-map.webp" width="1200" height="562" alt="천연기념물센터 전시안내도: 출입구, 식물·동물·지질 전시존, 천연보호구역, 명승, 한반도의 자연유산 위치" /></figure>
-            <p class="notice-bar">지도의 번호를 선택하면 전시 존 사진을 볼 수 있어요. 관람은 출입구(1번)에서 시작해 한반도의 자연유산(7번)까지 이어져요.</p>
-          </section>
-          <section aria-labelledby="h-order">
-            <h2 class="sub-h2 sub-h2--lg" id="h-order">관람 순서</h2>
-            <ol class="steps"><li class="step"><h3><span class="step__no">1</span>출입구</h3><p>관람은 여기서 시작해요</p></li><li class="step"><h3><span class="step__no">2</span>식물 전시존</h3><p>천연기념물 나무와 식물을 만나는 곳</p></li><li class="step"><h3><span class="step__no">3</span>동물 전시존</h3><p>박제 표본과 가까이 만나는 곳</p></li><li class="step"><h3><span class="step__no">4</span>지질 전시존</h3><p>화석과 암석으로 읽는 땅의 역사</p></li><li class="step"><h3><span class="step__no">5</span>천연보호구역</h3><p>보호구역의 자연을 사진으로 만나는 곳</p></li><li class="step"><h3><span class="step__no">6</span>명승</h3><p>자연과 사람이 만든 경치 이야기</p></li><li class="step"><h3><span class="step__no">7</span>한반도의 자연유산</h3><p>한반도 자연유산의 대표 전시</p></li></ol>
-          </section>
-        </div>
-        <!--@include survey-->
-      </div>
-    </main>
-
-    <!--@include footer-->
-    <script type="module" src="../scripts/facility.js"></script>
-  </body>
+<head>
+<!--@include head-->
+<title data-i18n="info-map.001">전시안내도 · 종합안내 | 천연기념물센터</title>
+<meta content="천연기념물센터 전시안내도와 관람 순서를 안내합니다." data-i18n-attr="content:info-map.002" name="description"/>
+</head>
+<body>
+<!--@include header-->
+<main id="main">
+<section aria-label="천연기념물센터 소개 배너" class="page-hero" data-i18n-attr="aria-label:common.001">
+<img alt="" class="page-hero__bg" fetchpriority="high" height="332" sizes="100vw" src="./images/hero/pine-960.webp" srcset="./images/hero/pine-960.webp 960w, ./images/hero/pine.webp 1920w" width="1920"/>
+<div class="page-hero__box">
+<p class="page-hero__en">Natural Heritage Center</p>
+<p data-i18n="common.002">국내 유일의 자연유산 전문 전시관</p>
+<p class="page-hero__name" data-i18n="common.003">천연기념물센터</p>
+</div>
+</section>
+<div class="container sub-body">
+<div class="page-title"><h1 data-i18n="common.026">종합안내</h1></div>
+<nav aria-label="종합안내 탭" class="pill-tabs" data-i18n-attr="aria-label:common.027"><a class="pill-tabs__tab" data-i18n="common.028" href="./info-overview.html">설립개요</a><a class="pill-tabs__tab" data-i18n="common.029" href="./info-facility.html">시설현황</a><a aria-current="page" class="pill-tabs__tab" data-i18n="common.030" href="./info-map.html">전시안내도</a></nav>
+<div class="sub-content">
+<section aria-labelledby="h-map">
+<h2 class="sub-h2 sub-h2--lg" data-i18n="common.030" id="h-map">전시안내도</h2>
+<!-- TODO: 지도 위 번호 핀은 이미지에 포함된 상태(선택 시 사진이 바뀌는 상호작용은 Figma에 정의되지 않아 미구현) -->
+<figure class="map-box"><img alt="천연기념물센터 전시안내도: 출입구, 식물·동물·지질 전시존, 천연보호구역, 명승, 한반도의 자연유산 위치" data-i18n-attr="alt:info-map.003" height="562" src="./images/pages/exhibit-map.webp" width="1200"/></figure>
+<p class="notice-bar" data-i18n="info-map.004">지도의 번호를 선택하면 전시 존 사진을 볼 수 있어요. 관람은 출입구(1번)에서 시작해 한반도의 자연유산(7번)까지 이어져요.</p>
+</section>
+<section aria-labelledby="h-order">
+<h2 class="sub-h2 sub-h2--lg" data-i18n="info-map.005" id="h-order">관람 순서</h2>
+<ol class="steps"><li class="step"><h3 data-i18n-html="info-map.006"><span class="step__no">1</span>출입구</h3><p data-i18n="info-map.007">관람은 여기서 시작해요</p></li><li class="step"><h3 data-i18n-html="info-map.008"><span class="step__no">2</span>식물 전시존</h3><p data-i18n="common.025">천연기념물 나무와 식물을 만나는 곳</p></li><li class="step"><h3 data-i18n-html="info-map.009"><span class="step__no">3</span>동물 전시존</h3><p data-i18n="info-map.010">박제 표본과 가까이 만나는 곳</p></li><li class="step"><h3 data-i18n-html="info-map.011"><span class="step__no">4</span>지질 전시존</h3><p data-i18n="info-map.012">화석과 암석으로 읽는 땅의 역사</p></li><li class="step"><h3 data-i18n-html="info-map.013"><span class="step__no">5</span>천연보호구역</h3><p data-i18n="info-map.014">보호구역의 자연을 사진으로 만나는 곳</p></li><li class="step"><h3 data-i18n-html="info-map.015"><span class="step__no">6</span>명승</h3><p data-i18n="info-map.016">자연과 사람이 만든 경치 이야기</p></li><li class="step"><h3 data-i18n-html="info-map.017"><span class="step__no">7</span>한반도의 자연유산</h3><p data-i18n="info-map.018">한반도 자연유산의 대표 전시</p></li></ol>
+</section>
+</div>
+<!--@include survey-->
+</div>
+</main>
+<!--@include footer-->
+<script src="../scripts/facility.js" type="module"></script>
+</body>
 </html>

@@ -17,6 +17,7 @@ const icons = {
   minus: '<path d="M4 12h16"/>',
   close: '<path d="M5 5l14 14M19 5L5 19"/>',
   menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.4 3.2 14.6 0 18M12 3c-3.2 3.4-3.2 14.6 0 18"/>',
   pause: '<path d="M9 5v14M15 5v14"/>',
   play: '<path d="M8 5l11 7-11 7z" fill="currentColor"/>',
   'open-new-window':
@@ -29,7 +30,7 @@ const svg = (name, cls = '') =>
 const loadMenu = () => JSON.parse(readFileSync(resolve(componentsDir, 'menu-data.json'), 'utf8'));
 const attrs = (c) => (c.external ? ' target="_blank" rel="noopener"' : '');
 const extMark = (c) =>
-  c.external ? `${svg('open-new-window', 'icon--sm')}<span class="sr-only">(새 창)</span>` : '';
+  c.external ? `${svg('open-new-window', 'icon--sm')}<span class="sr-only" data-i18n="menu.newwindow">(새 창)</span>` : '';
 
 const renderMenu = (kind) => {
   const menu = loadMenu(); // 개발 서버에서도 menu-data.json 수정이 바로 반영되도록 매번 읽음
@@ -37,7 +38,7 @@ const renderMenu = (kind) => {
     return menu
       .map(
         (g) =>
-          `<li class="gnb__item"><button type="button" class="gnb__btn" aria-expanded="false" aria-controls="mega-${g.id}" data-mega="${g.id}">${g.title}</button></li>`,
+          `<li class="gnb__item"><button type="button" class="gnb__btn" aria-expanded="false" aria-controls="mega-${g.id}" data-mega="${g.id}" data-i18n="${g.key}">${g.title}</button></li>`,
       )
       .join('');
   }
@@ -49,13 +50,13 @@ const renderMenu = (kind) => {
             const kids = (c.children ?? [])
               .map(
                 (k) =>
-                  `<a class="mega__link" href="${k.href}"${attrs(k)}><span class="mega__bullet" aria-hidden="true"></span>${k.title}${extMark(k)}</a>`,
+                  `<a class="mega__link" href="${k.href}"${attrs(k)}><span class="mega__bullet" aria-hidden="true"></span><span data-i18n="${k.key}">${k.title}</span>${extMark(k)}</a>`,
               )
               .join('');
-            return `<div class="mega__cell"><a class="mega__title" href="${c.href}"${attrs(c)}><span class="mega__bar" aria-hidden="true"></span>${c.title}${extMark(c)}</a>${kids}</div>`;
+            return `<div class="mega__cell"><a class="mega__title" href="${c.href}"${attrs(c)}><span class="mega__bar" aria-hidden="true"></span><span data-i18n="${c.key}">${c.title}</span>${extMark(c)}</a>${kids}</div>`;
           })
           .join('');
-        return `<div class="mega" id="mega-${g.id}" role="region" aria-label="${g.title}" hidden><div class="mega__grid">${cells}</div></div>`;
+        return `<div class="mega" id="mega-${g.id}" role="region" aria-label="${g.title}" data-i18n-attr="aria-label:${g.key}" hidden><div class="mega__grid">${cells}</div></div>`;
       })
       .join('');
   }
@@ -65,10 +66,10 @@ const renderMenu = (kind) => {
       const items = g.cells
         .map(
           (c) =>
-            `<li><a class="fullmenu__link" href="${c.href}"${attrs(c)}><span class="mega__bullet" aria-hidden="true"></span>${c.title}${extMark(c)}</a></li>`,
+            `<li><a class="fullmenu__link" href="${c.href}"${attrs(c)}><span class="mega__bullet" aria-hidden="true"></span><span data-i18n="${c.key}">${c.title}</span>${extMark(c)}</a></li>`,
         )
         .join('');
-      return `<div class="fullmenu__group"><p class="fullmenu__title">${g.title}</p><ul>${items}</ul></div>`;
+      return `<div class="fullmenu__group"><p class="fullmenu__title" data-i18n="${g.key}">${g.title}</p><ul>${items}</ul></div>`;
     })
     .join('');
 };

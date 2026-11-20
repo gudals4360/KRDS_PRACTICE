@@ -1,37 +1,47 @@
-<a class="skip-link" href="#main">본문 바로가기</a>
+<a class="skip-link" data-i18n="header.001" href="#main">본문 바로가기</a>
 <div class="gov-banner">
-  <div class="container gov-banner__inner">
-    <svg class="gov-banner__flag" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false">
-      <circle cx="10" cy="10" r="9.5" fill="#fff" stroke="#cdd1d5" />
-      <path d="M3.2 10a6.8 6.8 0 0 1 13.6 0z" fill="#d6212a" />
-      <path d="M3.2 10a6.8 6.8 0 0 0 13.6 0z" fill="#003478" />
-    </svg>
-    <p>이 누리집은 대한민국 공식 전자정부 누리집이 아니라 KRDS를 활용한 실습 페이지입니다.</p>
-  </div>
+<div class="container gov-banner__inner">
+<svg aria-hidden="true" class="gov-banner__flag" focusable="false" height="16" viewbox="0 0 20 20" width="16">
+<circle cx="10" cy="10" fill="#fff" r="9.5" stroke="#cdd1d5"></circle>
+<path d="M3.2 10a6.8 6.8 0 0 1 13.6 0z" fill="#d6212a"></path>
+<path d="M3.2 10a6.8 6.8 0 0 0 13.6 0z" fill="#003478"></path>
+</svg>
+<p data-i18n="header.002">이 누리집은 대한민국 공식 전자정부 누리집이 아니라 KRDS를 활용한 실습 페이지입니다.</p>
+<!-- 언어 선택 (오른쪽 상단). 동작: src/scripts/i18n.js -->
+<div class="lang" data-lang="">
+<button aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" class="lang__btn" type="button">
+{{icon:globe:icon--sm}}<span data-i18n="lang.button">Language</span>{{icon:chevron-down:icon--xs}}
+</button>
+<ul aria-label="언어 선택" class="lang__menu" data-i18n-attr="aria-label:lang.menu" hidden="" id="lang-menu">
+<li><button class="lang__opt" data-lang-option="ko" lang="ko" type="button">한국어</button></li>
+<li><button class="lang__opt" data-lang-option="en" lang="en" type="button">English</button></li>
+</ul>
+</div>
+</div>
 </div>
 <header class="site-header" id="site-header">
-  <div class="container site-header__bar">
-    <a class="logo" href="./index.html">
-      <img class="logo__emblem" src="./images/main/logo-emblem.png" alt="" width="32" height="32" />
-      <span class="logo__text">천연기념물센터</span>
-    </a>
-    <nav class="gnb" aria-label="주 메뉴">
-      <ul class="gnb__list"><!--@menu:nav--></ul>
-    </nav>
-    <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="fullmenu" aria-label="전체 메뉴 열기">
+<div class="container site-header__bar">
+<a class="logo" href="./index.html">
+<img alt="" class="logo__emblem" height="32" src="./images/main/logo-emblem.png" width="32"/>
+<span class="logo__text" data-i18n="common.003">천연기념물센터</span>
+</a>
+<nav aria-label="주 메뉴" class="gnb" data-i18n-attr="aria-label:header.003">
+<ul class="gnb__list"><!--@menu:nav--></ul>
+</nav>
+<button aria-controls="fullmenu" aria-expanded="false" aria-label="전체 메뉴 열기" class="icon-btn menu-toggle" data-i18n-attr="aria-label:header.004" type="button">
       {{icon:menu:icon--lg}}
     </button>
-  </div>
-  <!-- 데스크톱 메가메뉴 (호버/클릭/포커스로 열림) -->
-  <div class="mega-wrap"><!--@menu:mega--></div>
-  <!-- 햄버거 전체 메뉴 (Tablet/Mobile 포함 전 화면 공통) -->
-  <div class="fullmenu" id="fullmenu" role="region" aria-label="전체 메뉴" hidden>
-    <div class="container">
-      <div class="fullmenu__top">
-        <p class="fullmenu__heading">전체 메뉴</p>
-        <button type="button" class="icon-btn fullmenu__close" aria-label="전체 메뉴 닫기">{{icon:close:icon--lg}}</button>
-      </div>
-      <div class="fullmenu__grid"><!--@menu:full--></div>
-    </div>
-  </div>
+</div>
+<!-- 데스크톱 메가메뉴 (호버/클릭/포커스로 열림) -->
+<div class="mega-wrap"><!--@menu:mega--></div>
+<!-- 햄버거 전체 메뉴 (Tablet/Mobile 포함 전 화면 공통) -->
+<div aria-label="전체 메뉴" class="fullmenu" data-i18n-attr="aria-label:header.005" hidden="" id="fullmenu" role="region">
+<div class="container">
+<div class="fullmenu__top">
+<p class="fullmenu__heading" data-i18n="header.005">전체 메뉴</p>
+<button aria-label="전체 메뉴 닫기" class="icon-btn fullmenu__close" data-i18n-attr="aria-label:header.006" type="button">{{icon:close:icon--lg}}</button>
+</div>
+<div class="fullmenu__grid"><!--@menu:full--></div>
+</div>
+</div>
 </header>

@@ -20,3 +20,14 @@ npm run preview  # 빌드 결과 미리보기
 - `src/styles` — `tokens.css`(KRDS 토큰) + 컴포넌트/페이지 CSS
 - `src/scripts` — 헤더·메가메뉴, 팝업, 시설 뷰어, 메인 슬라이드
 - `public/images` — 이미지(교체용 자리표시는 코드의 `TODO` 주석 참고)
+
+## 다국어(i18n)
+
+키 기반 사전 방식입니다. 한국어가 기본이며(HTML에 그대로 들어 있음), 영어는 사전으로 교체합니다.
+
+- 사전: `src/i18n/ko.json`, `src/i18n/en.json` (같은 키 구조). 필요할 때만 동적으로 불러옵니다.
+- 마크업: `data-i18n="key"`(텍스트), `data-i18n-html="key"`(줄바꿈·강조가 섞인 문구), `data-i18n-attr="alt:key;aria-label:key2"`(속성)
+- 언어 선택: 오른쪽 상단 **Language** 버튼(지구본 아이콘). 선택은 `localStorage('lang')`에 저장되고 `?lang=en` 으로도 지정할 수 있습니다.
+- 메뉴(`src/components/menu-data.json`)는 항목마다 `key` 가 있어 빌드 시 `data-i18n` 으로 출력됩니다.
+- 새 언어 추가: `src/i18n/<lang>.json` 작성 → `src/scripts/i18n.js` 의 `LANGS`·`INLINE` 등록 → `src/components/header.html` 의 Language 메뉴에 항목 추가.
+- 문구를 바꿀 때는 HTML의 한국어 텍스트와 `ko.json`, `en.json` 의 같은 키를 함께 수정하세요.

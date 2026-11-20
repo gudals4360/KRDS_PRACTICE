@@ -1,42 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
-  <head>
-    <!--@include head-->
-    <title>천연보호구역 | 천연기념물센터</title>
-    <meta name="description" content="천연보호구역 전시존을 소개합니다." />
-  </head>
-  <body>
-    <!--@include header-->
-
-    <main id="main">
-      <section class="page-hero" aria-label="천연기념물센터 소개 배너">
-        <img class="page-hero__bg" src="./images/hero/reserve-960.webp" srcset="./images/hero/reserve-960.webp 960w, ./images/hero/reserve.webp 1920w" sizes="100vw" width="1920" height="332" alt="" fetchpriority="high" />
-        <div class="page-hero__box">
-          <p class="page-hero__en">Natural Heritage Center</p>
-          <p>국내 유일의 자연유산 전문 전시관</p>
-          <p class="page-hero__name">천연기념물센터</p>
-        </div>
-      </section>
-
-      <div class="container sub-body">
-        <div class="page-title"><h1>천연보호구역</h1></div>
-        <div class="sub-content">
-          <section class="exhibit-card" aria-label="천연보호구역 전시존 소개">
-            <img class="exhibit-card__photo" src="./images/pages/ex-reserve.webp" width="420" height="420" alt="천연보호구역 전시 공간" />
-            <div class="exhibit-card__body">
-              <h2>자연 그대로를 지키는 ‘천연보호구역’ 전시존</h2>
-              <span class="exhibit-card__bar" aria-hidden="true"></span>
-              <p>생태계가 잘 보존된 지역을 천연보호구역으로 지정해 보호하는 이야기를 소개한다.</p><p>사진과 영상으로 보호구역의 사계절과 그곳에 사는 생물을 만나 볼 수 있다.</p>
-            </div>
-            <!-- 전시실 위치보기: 소개 패널(.exhibit-card) 오른쪽 아래에서 20px 띄워 고정 (absolute, right/bottom 20px) -->
-            <a class="btn btn--locate" href="./info-map.html">전시실 위치보기 {{icon:chevron-right:icon--sm}}</a>
-          </section>
-          <div class="exhibit-cta"><a class="btn btn--reserve" href="./group-visit.html#reservation">단체관람 예약</a></div>
-        </div>
-      </div>
-    </main>
-
-    <!--@include footer-->
-    <script type="module" src="../scripts/sub.js"></script>
-  </body>
+<head>
+<!--@include head-->
+<title data-i18n="exhibit-reserve.001">천연보호구역 | 천연기념물센터</title>
+<meta content="천연보호구역 전시존을 소개합니다." data-i18n-attr="content:exhibit-reserve.002" name="description"/>
+</head>
+<body>
+<!--@include header-->
+<main id="main">
+<section aria-label="천연기념물센터 소개 배너" class="page-hero" data-i18n-attr="aria-label:common.001">
+<img alt="" class="page-hero__bg" fetchpriority="high" height="332" sizes="100vw" src="./images/hero/reserve-960.webp" srcset="./images/hero/reserve-960.webp 960w, ./images/hero/reserve.webp 1920w" width="1920"/>
+<div class="page-hero__box">
+<p class="page-hero__en">Natural Heritage Center</p>
+<p data-i18n="common.002">국내 유일의 자연유산 전문 전시관</p>
+<p class="page-hero__name" data-i18n="common.003">천연기념물센터</p>
+</div>
+</section>
+<div class="container sub-body">
+<div class="page-title"><h1 data-i18n="exhibit-reserve.003">천연보호구역</h1></div>
+<div class="sub-content">
+<section aria-label="천연보호구역 전시존 소개" class="exhibit-card" data-i18n-attr="aria-label:exhibit-reserve.004">
+<img alt="천연보호구역 전시 공간" class="exhibit-card__photo" data-i18n-attr="alt:exhibit-reserve.005" height="420" src="./images/pages/ex-reserve.webp" width="420"/>
+<div class="exhibit-card__body">
+<h2 data-i18n="exhibit-reserve.006">자연 그대로를 지키는 ‘천연보호구역’ 전시존</h2>
+<span aria-hidden="true" class="exhibit-card__bar"></span>
+<p data-i18n="exhibit-reserve.007">생태계가 잘 보존된 지역을 천연보호구역으로 지정해 보호하는 이야기를 소개한다.</p><p data-i18n="exhibit-reserve.008">사진과 영상으로 보호구역의 사계절과 그곳에 사는 생물을 만나 볼 수 있다.</p>
+</div>
+<!-- 전시실 위치보기: 소개 패널(.exhibit-card) 오른쪽 아래에서 20px 띄워 고정 (absolute, right/bottom 20px) -->
+<a class="btn btn--locate" href="./info-map.html"><span data-i18n="common.004">전시실 위치보기</span> {{icon:chevron-right:icon--sm}}</a>
+</section>
+<div class="exhibit-cta"><a class="btn btn--reserve" data-i18n="common.005" href="./group-visit.html#reservation">단체관람 예약</a></div>
+</div>
+</div>
+</main>
+<!--@include footer-->
+<script src="../scripts/sub.js" type="module"></script>
+</body>
 </html>

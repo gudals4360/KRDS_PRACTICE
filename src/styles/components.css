@@ -4,6 +4,8 @@
 
 /* ---------- 정부 배너 ---------- */
 .gov-banner {
+  position: relative;
+  z-index: 110; /* Language 드롭다운이 헤더/메가메뉴 위에 보이도록 */
   background: var(--color-surface-gray-subtler);
   font-size: 14px;
   line-height: 32px;
@@ -18,9 +20,60 @@
   padding-inline: var(--padding-3);
   margin: 0;
   white-space: nowrap;
-  overflow: hidden;
+  /* overflow:hidden 은 문구(p)에만 적용 — Language 드롭다운이 잘리거나 안쪽이 스크롤되지 않도록 */
+}
+.lang {
+  position: relative;
+  flex: none;
+  margin-left: auto;
+}
+.lang__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-2);
+  height: var(--size-height-5);
+  padding-inline: var(--padding-3);
+  border-radius: var(--radius-small);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-text-basic);
+}
+.lang__btn:hover,
+.lang__btn[aria-expanded='true'] {
+  background: var(--color-surface-secondary-subtler);
+}
+.lang__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  min-width: 140px;
+  padding: var(--padding-2);
+  background: var(--color-surface-white);
+  border: var(--border-width) solid var(--color-border-gray-light);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-mega);
+}
+.lang__opt {
+  display: block;
+  width: 100%;
+  padding: var(--padding-4) var(--padding-5);
+  border-radius: var(--radius-small);
+  font-size: 15px;
+  text-align: left;
+}
+.lang__opt:hover {
+  background: var(--color-surface-gray-subtler);
+}
+.lang__opt[aria-current='true'] {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-element-primary);
+}
+.lang__opt[aria-current='true']::after {
+  content: ' ✓';
 }
 .gov-banner__inner p {
+  flex: 1 1 auto;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }

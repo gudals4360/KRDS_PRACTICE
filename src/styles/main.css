@@ -139,7 +139,7 @@
 }
 .now__grid {
   display: grid;
-  grid-template-columns: 1fr var(--carousel-panel-width);
+  grid-template-columns: minmax(0, 1fr) var(--carousel-panel-width);
   grid-template-areas: 'carousel banner' 'dots banner';
   gap: var(--gap-7) var(--carousel-gap-x);
   margin-top: var(--gap-7);
@@ -153,6 +153,7 @@
   min-width: 0;
 }
 .now__track {
+  position: relative; /* 안쪽 .sr-only(absolute)가 스크롤 영역 밖으로 삐져나가 페이지 폭을 늘리지 않도록 */
   display: flex;
   gap: var(--carousel-gap-x);
   flex: 1;
@@ -257,6 +258,7 @@
   border-bottom: var(--border-width) solid var(--color-border-gray-light);
 }
 .tabs {
+  position: relative;
   display: flex;
   gap: var(--gap-3);
   overflow-x: auto;
@@ -456,7 +458,7 @@
     font-size: var(--fs-heading-medium);
   }
   .now__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 'carousel' 'dots' 'banner';
   }
   .now-card {

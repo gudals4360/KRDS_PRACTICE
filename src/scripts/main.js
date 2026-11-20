@@ -1,5 +1,6 @@
 import { initHeader, initFooter } from './header.js';
 import { initPopup } from './popup.js';
+import { t } from './i18n.js';
 
 initHeader();
 initFooter();
@@ -48,7 +49,7 @@ function initHero() {
   const setPlaying = (on) => {
     playing = on;
     on ? play() : clearInterval(timer);
-    toggle.setAttribute('aria-label', on ? '자동 재생 정지' : '자동 재생 시작');
+    toggle.setAttribute('aria-label', t(on ? 'js.hero.pause' : 'js.hero.play'));
     toggle.innerHTML = on
       ? '<svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>'
       : '<svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>';
@@ -65,6 +66,7 @@ function initHero() {
 
   show(0);
   setPlaying(playing);
+  window.addEventListener('langchange', () => setPlaying(playing));
 }
 
 // ---------- 지금 만나는 전시 (가로 스크롤 스냅 + 화살표) ----------

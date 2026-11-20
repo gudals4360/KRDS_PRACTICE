@@ -1,42 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
-  <head>
-    <!--@include head-->
-    <title>천연기념물 지질 | 천연기념물센터</title>
-    <meta name="description" content="천연기념물 지질 전시존을 소개합니다." />
-  </head>
-  <body>
-    <!--@include header-->
-
-    <main id="main">
-      <section class="page-hero" aria-label="천연기념물센터 소개 배너">
-        <img class="page-hero__bg" src="./images/hero/geology-960.webp" srcset="./images/hero/geology-960.webp 960w, ./images/hero/geology.webp 1920w" sizes="100vw" width="1920" height="332" alt="" fetchpriority="high" />
-        <div class="page-hero__box">
-          <p class="page-hero__en">Natural Heritage Center</p>
-          <p>국내 유일의 자연유산 전문 전시관</p>
-          <p class="page-hero__name">천연기념물센터</p>
-        </div>
-      </section>
-
-      <div class="container sub-body">
-        <div class="page-title"><h1>천연기념물 지질</h1></div>
-        <div class="sub-content">
-          <section class="exhibit-card" aria-label="천연기념물 지질 전시존 소개">
-            <img class="exhibit-card__photo" src="./images/pages/ex-geology.webp" width="420" height="420" alt="화석 전시 모습" />
-            <div class="exhibit-card__body">
-              <h2>땅의 시간을 담은 천연기념물 ‘지질’ 전시존</h2>
-              <span class="exhibit-card__bar" aria-hidden="true"></span>
-              <p>화석과 암석, 지질 경관 등 지구가 만들어 온 오랜 이야기를 소개한다.</p><p>지질 유산의 가치와 보존 노력을 모형과 영상으로 살펴볼 수 있다.</p>
-            </div>
-            <!-- 전시실 위치보기: 소개 패널(.exhibit-card) 오른쪽 아래에서 20px 띄워 고정 (absolute, right/bottom 20px) -->
-            <a class="btn btn--locate" href="./info-map.html">전시실 위치보기 {{icon:chevron-right:icon--sm}}</a>
-          </section>
-          <div class="exhibit-cta"><a class="btn btn--reserve" href="./group-visit.html#reservation">단체관람 예약</a></div>
-        </div>
-      </div>
-    </main>
-
-    <!--@include footer-->
-    <script type="module" src="../scripts/sub.js"></script>
-  </body>
+<head>
+<!--@include head-->
+<title data-i18n="exhibit-geology.001">천연기념물 지질 | 천연기념물센터</title>
+<meta content="천연기념물 지질 전시존을 소개합니다." data-i18n-attr="content:exhibit-geology.002" name="description"/>
+</head>
+<body>
+<!--@include header-->
+<main id="main">
+<section aria-label="천연기념물센터 소개 배너" class="page-hero" data-i18n-attr="aria-label:common.001">
+<img alt="" class="page-hero__bg" fetchpriority="high" height="332" sizes="100vw" src="./images/hero/geology-960.webp" srcset="./images/hero/geology-960.webp 960w, ./images/hero/geology.webp 1920w" width="1920"/>
+<div class="page-hero__box">
+<p class="page-hero__en">Natural Heritage Center</p>
+<p data-i18n="common.002">국내 유일의 자연유산 전문 전시관</p>
+<p class="page-hero__name" data-i18n="common.003">천연기념물센터</p>
+</div>
+</section>
+<div class="container sub-body">
+<div class="page-title"><h1 data-i18n="exhibit-geology.003">천연기념물 지질</h1></div>
+<div class="sub-content">
+<section aria-label="천연기념물 지질 전시존 소개" class="exhibit-card" data-i18n-attr="aria-label:exhibit-geology.004">
+<img alt="화석 전시 모습" class="exhibit-card__photo" data-i18n-attr="alt:common.006" height="420" src="./images/pages/ex-geology.webp" width="420"/>
+<div class="exhibit-card__body">
+<h2 data-i18n="exhibit-geology.005">땅의 시간을 담은 천연기념물 ‘지질’ 전시존</h2>
+<span aria-hidden="true" class="exhibit-card__bar"></span>
+<p data-i18n="exhibit-geology.006">화석과 암석, 지질 경관 등 지구가 만들어 온 오랜 이야기를 소개한다.</p><p data-i18n="exhibit-geology.007">지질 유산의 가치와 보존 노력을 모형과 영상으로 살펴볼 수 있다.</p>
+</div>
+<!-- 전시실 위치보기: 소개 패널(.exhibit-card) 오른쪽 아래에서 20px 띄워 고정 (absolute, right/bottom 20px) -->
+<a class="btn btn--locate" href="./info-map.html"><span data-i18n="common.004">전시실 위치보기</span> {{icon:chevron-right:icon--sm}}</a>
+</section>
+<div class="exhibit-cta"><a class="btn btn--reserve" data-i18n="common.005" href="./group-visit.html#reservation">단체관람 예약</a></div>
+</div>
+</div>
+</main>
+<!--@include footer-->
+<script src="../scripts/sub.js" type="module"></script>
+</body>
 </html>

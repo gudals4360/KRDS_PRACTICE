@@ -1,117 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
-  <head>
-    <!--@include head-->
-    <title>시설현황 · 종합안내 | 천연기념물센터</title>
-    <meta name="description" content="천연기념물센터의 시설 현황, 시설규모 및 면적, 전시물 현황을 안내합니다." />
-    <link rel="stylesheet" href="../styles/facility.css" />
-  </head>
-  <body>
-    <!--@include header-->
-
-    <main id="main">
-      <section class="page-hero" aria-label="천연기념물센터 소개 배너">
-        <img class="page-hero__bg" src="./images/facility/hero-banner-960.webp" srcset="./images/facility/hero-banner-960.webp 960w, ./images/facility/hero-banner.webp 1920w" sizes="100vw" width="1920" height="950" alt="" fetchpriority="high" />
-        <div class="page-hero__box">
-          <p class="page-hero__en">Natural Heritage Center</p>
-          <p>국내 유일의 자연유산 전문 전시관</p>
-          <p class="page-hero__name">천연기념물센터</p>
-        </div>
-      </section>
-
-      <div class="container sub-body">
-        <div class="page-title"><h1>종합안내</h1></div>
-
-        <nav class="pill-tabs" aria-label="종합안내 탭">
-          <a class="pill-tabs__tab" href="./info-overview.html">설립개요</a>
-          <a class="pill-tabs__tab" href="./info-facility.html" aria-current="page">시설현황</a>
-          <a class="pill-tabs__tab" href="./info-map.html">전시안내도</a>
-        </nav>
-
-        <!-- 시설 뷰어: 선택한 시설에 따라 사진과 선택 상태가 바뀜 -->
-        <section class="viewer" aria-label="시설 뷰어" data-viewer>
-          <div class="viewer__photos" aria-live="polite">
-            <figure class="viewer__photo" data-photo="exhibit">
-              <img src="./images/facility/facility-exhibit.webp" width="1000" height="500" alt="새와 동물 표본이 계단형으로 전시된 전시실 내부" />
-            </figure>
-            <!-- TODO: 수장고·표본관리동·연구동 사진은 Figma 변수 모드(시설 뷰어) 안에 있어 아직 받지 못함. 사진 파일을 public/images/facility/ 에 넣고 <div class="photo-ph"> 를 <img> 로 교체 -->
-            <figure class="viewer__photo" data-photo="storage" hidden>
-              <div class="photo-ph" role="img" aria-label="수장고 사진 (준비 중)">수장고 사진 준비 중</div>
-            </figure>
-            <figure class="viewer__photo" data-photo="specimen" hidden>
-              <div class="photo-ph" role="img" aria-label="표본관리동 사진 (준비 중)">표본관리동 사진 준비 중</div>
-            </figure>
-            <figure class="viewer__photo" data-photo="lab" hidden>
-              <div class="photo-ph" role="img" aria-label="연구동 사진 (준비 중)">연구동 사진 준비 중</div>
-            </figure>
-          </div>
-          <div class="viewer__list" role="tablist" aria-label="시설 선택" aria-orientation="vertical">
-            <button type="button" class="viewer__item" role="tab" aria-selected="true" data-target="exhibit"><span class="viewer__num">01</span>전시실</button>
-            <button type="button" class="viewer__item" role="tab" aria-selected="false" tabindex="-1" data-target="storage"><span class="viewer__num">02</span>수장고</button>
-            <button type="button" class="viewer__item" role="tab" aria-selected="false" tabindex="-1" data-target="specimen"><span class="viewer__num">03</span>표본관리동</button>
-            <button type="button" class="viewer__item" role="tab" aria-selected="false" tabindex="-1" data-target="lab"><span class="viewer__num">04</span>연구동</button>
-          </div>
-        </section>
-
-        <section class="sub-section" aria-labelledby="scale-title">
-          <h2 class="sub-section__title" id="scale-title">시설규모 및 면적</h2>
-          <ul class="stats">
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-site.webp" width="80" height="80" alt="" loading="lazy" />
-              <h3 class="stat__label">대지면적</h3><hr class="stat__line" />
-              <p class="stat__value">22,942㎡</p>
-            </li>
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-building.webp" width="80" height="80" alt="" loading="lazy" />
-              <h3 class="stat__label">건축연면적</h3><hr class="stat__line" />
-              <p class="stat__value">6,943㎡</p>
-            </li>
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-exhibit-hall.webp" width="80" height="80" alt="" loading="lazy" />
-              <h3 class="stat__label">전시동</h3><hr class="stat__line" />
-              <p class="stat__value">3,726㎡</p>
-              <p class="stat__note">(지상 2층)</p>
-            </li>
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-lab.webp" width="80" height="80" alt="" loading="lazy" />
-              <h3 class="stat__label">연구동 및 표본관리동</h3><hr class="stat__line" />
-              <p class="stat__value">2,940㎡</p>
-              <p class="stat__note">(지하1층 지상3층)</p>
-            </li>
-          </ul>
-        </section>
-
-        <section class="sub-section" aria-labelledby="items-title">
-          <h2 class="sub-section__title" id="items-title">전시물</h2>
-          <ul class="stats stats--exhibits">
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-specimen.webp" width="64" height="64" alt="" loading="lazy" />
-              <h3 class="stat__label">표본</h3><hr class="stat__line" />
-              <p class="stat__value">394점</p>
-            </li>
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-panel.webp" width="64" height="64" alt="" loading="lazy" />
-              <h3 class="stat__label">패널</h3><hr class="stat__line" />
-              <p class="stat__value">235개</p>
-            </li>
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-video.webp" width="64" height="64" alt="" loading="lazy" />
-              <h3 class="stat__label">영상물</h3><hr class="stat__line" />
-              <p class="stat__value">20식</p>
-            </li>
-            <li class="stat">
-              <img class="stat__icon" src="./images/facility/ic-arvr.webp" width="64" height="64" alt="" loading="lazy" />
-              <h3 class="stat__label">AR 및 VR</h3><hr class="stat__line" />
-              <p class="stat__value">5점</p>
-            </li>
-          </ul>
-        </section>
-
-        <!--@include survey-->
-      </div>
-    </main>
-
-    <!--@include footer-->
-    <script type="module" src="../scripts/facility.js"></script>
-  </body>
+<head>
+<!--@include head-->
+<title data-i18n="info-facility.001">시설현황 · 종합안내 | 천연기념물센터</title>
+<meta content="천연기념물센터의 시설 현황, 시설규모 및 면적, 전시물 현황을 안내합니다." data-i18n-attr="content:info-facility.002" name="description"/>
+<link href="../styles/facility.css" rel="stylesheet"/>
+</head>
+<body>
+<!--@include header-->
+<main id="main">
+<section aria-label="천연기념물센터 소개 배너" class="page-hero" data-i18n-attr="aria-label:common.001">
+<img alt="" class="page-hero__bg" fetchpriority="high" height="950" sizes="100vw" src="./images/facility/hero-banner-960.webp" srcset="./images/facility/hero-banner-960.webp 960w, ./images/facility/hero-banner.webp 1920w" width="1920"/>
+<div class="page-hero__box">
+<p class="page-hero__en">Natural Heritage Center</p>
+<p data-i18n="common.002">국내 유일의 자연유산 전문 전시관</p>
+<p class="page-hero__name" data-i18n="common.003">천연기념물센터</p>
+</div>
+</section>
+<div class="container sub-body">
+<div class="page-title"><h1 data-i18n="common.026">종합안내</h1></div>
+<nav aria-label="종합안내 탭" class="pill-tabs" data-i18n-attr="aria-label:common.027">
+<a class="pill-tabs__tab" data-i18n="common.028" href="./info-overview.html">설립개요</a>
+<a aria-current="page" class="pill-tabs__tab" data-i18n="common.029" href="./info-facility.html">시설현황</a>
+<a class="pill-tabs__tab" data-i18n="common.030" href="./info-map.html">전시안내도</a>
+</nav>
+<!-- 시설 뷰어: 선택한 시설에 따라 사진과 선택 상태가 바뀜 -->
+<section aria-label="시설 뷰어" class="viewer" data-i18n-attr="aria-label:info-facility.003" data-viewer="">
+<div aria-live="polite" class="viewer__photos">
+<figure class="viewer__photo" data-photo="exhibit">
+<img alt="새와 동물 표본이 계단형으로 전시된 전시실 내부" data-i18n-attr="alt:info-facility.004" height="500" src="./images/facility/facility-exhibit.webp" width="1000"/>
+</figure>
+<!-- TODO: 수장고·표본관리동·연구동 사진은 Figma 변수 모드(시설 뷰어) 안에 있어 아직 받지 못함. 사진 파일을 public/images/facility/ 에 넣고 <div class="photo-ph"> 를 <img> 로 교체 -->
+<figure class="viewer__photo" data-photo="storage" hidden="">
+<div aria-label="수장고 사진 (준비 중)" class="photo-ph" data-i18n="info-facility.006" data-i18n-attr="aria-label:info-facility.005" role="img">수장고 사진 준비 중</div>
+</figure>
+<figure class="viewer__photo" data-photo="specimen" hidden="">
+<div aria-label="표본관리동 사진 (준비 중)" class="photo-ph" data-i18n="info-facility.008" data-i18n-attr="aria-label:info-facility.007" role="img">표본관리동 사진 준비 중</div>
+</figure>
+<figure class="viewer__photo" data-photo="lab" hidden="">
+<div aria-label="연구동 사진 (준비 중)" class="photo-ph" data-i18n="info-facility.010" data-i18n-attr="aria-label:info-facility.009" role="img">연구동 사진 준비 중</div>
+</figure>
+</div>
+<div aria-label="시설 선택" aria-orientation="vertical" class="viewer__list" data-i18n-attr="aria-label:info-facility.011" role="tablist">
+<button aria-selected="true" class="viewer__item" data-i18n-html="info-facility.012" data-target="exhibit" role="tab" type="button"><span class="viewer__num">01</span>전시실</button>
+<button aria-selected="false" class="viewer__item" data-i18n-html="info-facility.013" data-target="storage" role="tab" tabindex="-1" type="button"><span class="viewer__num">02</span>수장고</button>
+<button aria-selected="false" class="viewer__item" data-i18n-html="info-facility.014" data-target="specimen" role="tab" tabindex="-1" type="button"><span class="viewer__num">03</span>표본관리동</button>
+<button aria-selected="false" class="viewer__item" data-i18n-html="info-facility.015" data-target="lab" role="tab" tabindex="-1" type="button"><span class="viewer__num">04</span>연구동</button>
+</div>
+</section>
+<section aria-labelledby="scale-title" class="sub-section">
+<h2 class="sub-section__title" data-i18n="info-facility.016" id="scale-title">시설규모 및 면적</h2>
+<ul class="stats">
+<li class="stat">
+<img alt="" class="stat__icon" height="80" loading="lazy" src="./images/facility/ic-site.webp" width="80"/>
+<h3 class="stat__label" data-i18n="info-facility.017">대지면적</h3><hr class="stat__line"/>
+<p class="stat__value">22,942㎡</p>
+</li>
+<li class="stat">
+<img alt="" class="stat__icon" height="80" loading="lazy" src="./images/facility/ic-building.webp" width="80"/>
+<h3 class="stat__label" data-i18n="info-facility.018">건축연면적</h3><hr class="stat__line"/>
+<p class="stat__value">6,943㎡</p>
+</li>
+<li class="stat">
+<img alt="" class="stat__icon" height="80" loading="lazy" src="./images/facility/ic-exhibit-hall.webp" width="80"/>
+<h3 class="stat__label" data-i18n="info-facility.019">전시동</h3><hr class="stat__line"/>
+<p class="stat__value">3,726㎡</p>
+<p class="stat__note" data-i18n="info-facility.020">(지상 2층)</p>
+</li>
+<li class="stat">
+<img alt="" class="stat__icon" height="80" loading="lazy" src="./images/facility/ic-lab.webp" width="80"/>
+<h3 class="stat__label" data-i18n="info-facility.021">연구동 및 표본관리동</h3><hr class="stat__line"/>
+<p class="stat__value">2,940㎡</p>
+<p class="stat__note" data-i18n="info-facility.022">(지하1층 지상3층)</p>
+</li>
+</ul>
+</section>
+<section aria-labelledby="items-title" class="sub-section">
+<h2 class="sub-section__title" data-i18n="info-facility.023" id="items-title">전시물</h2>
+<ul class="stats stats--exhibits">
+<li class="stat">
+<img alt="" class="stat__icon" height="64" loading="lazy" src="./images/facility/ic-specimen.webp" width="64"/>
+<h3 class="stat__label" data-i18n="info-facility.024">표본</h3><hr class="stat__line"/>
+<p class="stat__value" data-i18n="info-facility.025">394점</p>
+</li>
+<li class="stat">
+<img alt="" class="stat__icon" height="64" loading="lazy" src="./images/facility/ic-panel.webp" width="64"/>
+<h3 class="stat__label" data-i18n="info-facility.026">패널</h3><hr class="stat__line"/>
+<p class="stat__value" data-i18n="info-facility.027">235개</p>
+</li>
+<li class="stat">
+<img alt="" class="stat__icon" height="64" loading="lazy" src="./images/facility/ic-video.webp" width="64"/>
+<h3 class="stat__label" data-i18n="info-facility.028">영상물</h3><hr class="stat__line"/>
+<p class="stat__value" data-i18n="info-facility.029">20식</p>
+</li>
+<li class="stat">
+<img alt="" class="stat__icon" height="64" loading="lazy" src="./images/facility/ic-arvr.webp" width="64"/>
+<h3 class="stat__label" data-i18n="info-facility.030">AR 및 VR</h3><hr class="stat__line"/>
+<p class="stat__value" data-i18n="info-facility.031">5점</p>
+</li>
+</ul>
+</section>
+<!--@include survey-->
+</div>
+</main>
+<!--@include footer-->
+<script src="../scripts/facility.js" type="module"></script>
+</body>
 </html>

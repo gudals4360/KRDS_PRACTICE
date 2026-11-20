@@ -1,4 +1,6 @@
-// 헤더: 데스크톱 메가메뉴(호버/클릭/포커스), 햄버거 전체 메뉴, 푸터 아코디언
+// 헤더: 데스크톱 메가메뉴(호버/클릭/포커스), 햄버거 전체 메뉴, 푸터 아코디언, 언어 선택
+import { initI18n, t } from './i18n.js';
+
 export function initHeader() {
   const header = document.getElementById('site-header');
   if (!header) return;
@@ -25,13 +27,13 @@ export function initHeader() {
     if (!full || full.hidden) return;
     full.hidden = true;
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', '전체 메뉴 열기');
+    toggle.setAttribute('aria-label', t('js.menu.open'));
   };
   const openFull = () => {
     closeMega();
     full.hidden = false;
     toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', '전체 메뉴 닫기');
+    toggle.setAttribute('aria-label', t('js.menu.close'));
   };
 
   let openedByHover = null; // 호버로 막 열린 메뉴: 이어지는 클릭은 닫지 않고 고정
@@ -87,6 +89,12 @@ export function initHeader() {
   // 키보드로 메가메뉴 밖으로 포커스가 나가면 닫기
   header.addEventListener('focusout', (e) => {
     if (e.relatedTarget && !header.contains(e.relatedTarget)) closeMega();
+  });
+
+  // 언어 선택 초기화 + 언어가 바뀌면 상태에 따라 바뀌는 라벨 동기화
+  initI18n();
+  window.addEventListener('langchange', () => {
+    toggle.setAttribute('aria-label', t(full.hidden ? 'js.menu.open' : 'js.menu.close'));
   });
 
   // 현재 페이지 메뉴 표시

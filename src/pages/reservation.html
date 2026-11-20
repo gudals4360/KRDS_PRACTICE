@@ -1,41 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
-  <head>
-    <!--@include head-->
-    <title>예약(취소) 조회 | 천연기념물센터</title>
-    <meta name="description" content="예약 내용을 조회하고 취소할 수 있습니다." />
-  </head>
-  <body>
-    <!--@include header-->
-
-    <main id="main">
-      <section class="page-hero page-hero--s" aria-label="천연기념물센터 소개 배너">
-        <img class="page-hero__bg" src="./images/hero/lobby-960.webp" srcset="./images/hero/lobby-960.webp 960w, ./images/hero/lobby.webp 1920w" sizes="100vw" width="1920" height="332" alt="" fetchpriority="high" />
-        <div class="page-hero__box">
-          <p class="page-hero__en">Natural Heritage Center</p>
-          <p>국내 유일의 자연유산 전문 전시관</p>
-          <p class="page-hero__name">천연기념물센터</p>
-        </div>
-      </section>
-
-      <div class="container sub-body">
-        <div class="page-title"><h1>예약(취소) 조회</h1></div>
-        <div class="sub-content">
-          <section class="intro-box"><h2>예약 내용을 조회하고 취소할 수 있어요</h2><span class="intro-box__bar" aria-hidden="true"></span><p>예약하실 때 입력한 정보로 예약 내역을 확인해 주세요.</p></section>
-          <form onsubmit="return false" aria-label="예약 조회">
-            <!-- 조회·취소 기능 없음: 화면(UI)만 구현 -->
-            <div class="form-table">
-              <div class="form-row"><label for="r-name">예약자명</label><div class="form-row__field"><input class="input" id="r-name" type="text" placeholder="이름을 입력하세요." /></div></div>
-              <div class="form-row"><label for="r-tel">연락처</label><div class="form-row__field"><input class="input" id="r-tel" type="tel" placeholder="휴대전화 번호를 입력하세요." /></div></div>
-              <div class="form-row"><label for="r-no">예약번호</label><div class="form-row__field"><input class="input" id="r-no" type="text" placeholder="예약번호를 입력하세요." /></div></div>
-            </div>
-            <div class="form-actions"><button type="reset" class="btn btn--outline">취소</button><button type="submit" class="btn btn--primary btn--sm-primary">조회</button></div>
-          </form>
-        </div>
-      </div>
-    </main>
-
-    <!--@include footer-->
-    <script type="module" src="../scripts/sub.js"></script>
-  </body>
+<head>
+<!--@include head-->
+<title data-i18n="reservation.001">예약(취소) 조회 | 천연기념물센터</title>
+<meta content="예약 내용을 조회하고 취소할 수 있습니다." data-i18n-attr="content:reservation.002" name="description"/>
+</head>
+<body>
+<!--@include header-->
+<main id="main">
+<section aria-label="천연기념물센터 소개 배너" class="page-hero page-hero--s" data-i18n-attr="aria-label:common.001">
+<img alt="" class="page-hero__bg" fetchpriority="high" height="332" sizes="100vw" src="./images/hero/lobby-960.webp" srcset="./images/hero/lobby-960.webp 960w, ./images/hero/lobby.webp 1920w" width="1920"/>
+<div class="page-hero__box">
+<p class="page-hero__en">Natural Heritage Center</p>
+<p data-i18n="common.002">국내 유일의 자연유산 전문 전시관</p>
+<p class="page-hero__name" data-i18n="common.003">천연기념물센터</p>
+</div>
+</section>
+<div class="container sub-body">
+<div class="page-title"><h1 data-i18n="reservation.003">예약(취소) 조회</h1></div>
+<div class="sub-content">
+<section class="intro-box"><h2 data-i18n="reservation.004">예약 내용을 조회하고 취소할 수 있어요</h2><span aria-hidden="true" class="intro-box__bar"></span><p data-i18n="reservation.005">예약하실 때 입력한 정보로 예약 내역을 확인해 주세요.</p></section>
+<form aria-label="예약 조회" data-i18n-attr="aria-label:reservation.006" onsubmit="return false">
+<!-- 조회·취소 기능 없음: 화면(UI)만 구현 -->
+<div class="form-table">
+<div class="form-row"><label data-i18n="reservation.007" for="r-name">예약자명</label><div class="form-row__field"><input class="input" data-i18n-attr="placeholder:reservation.008" id="r-name" placeholder="이름을 입력하세요." type="text"/></div></div>
+<div class="form-row"><label data-i18n="reservation.009" for="r-tel">연락처</label><div class="form-row__field"><input class="input" data-i18n-attr="placeholder:reservation.010" id="r-tel" placeholder="휴대전화 번호를 입력하세요." type="tel"/></div></div>
+<div class="form-row"><label data-i18n="reservation.011" for="r-no">예약번호</label><div class="form-row__field"><input class="input" data-i18n-attr="placeholder:reservation.012" id="r-no" placeholder="예약번호를 입력하세요." type="text"/></div></div>
+</div>
+<div class="form-actions"><button class="btn btn--outline" data-i18n="common.053" type="reset">취소</button><button class="btn btn--primary btn--sm-primary" data-i18n="common.038" type="submit">조회</button></div>
+</form>
+</div>
+</div>
+</main>
+<!--@include footer-->
+<script src="../scripts/sub.js" type="module"></script>
+</body>
 </html>

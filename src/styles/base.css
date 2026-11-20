@@ -110,6 +110,10 @@ button {
   width: 20px;
   height: 20px;
 }
+.icon--xs {
+  width: 16px;
+  height: 16px;
+}
 .icon--lg {
   width: 32px;
   height: 32px;

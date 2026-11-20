@@ -281,7 +281,7 @@
 .board-count { margin-top: var(--gap-5); font-size: 15px; }
 .board-count b { color: #d63d44; font-weight: var(--font-weight-regular); }
 
-.table-wrap { overflow-x: auto; }
+.table-wrap { position: relative; overflow-x: auto; }
 .board {
   width: 100%;
   min-width: 640px;
@@ -382,7 +382,8 @@
 }
 .post__file { padding-block: 20px; }
 .post__meta dt, .post__file dt { font-weight: var(--font-weight-bold); display: inline; }
-.post__meta dd, .post__file dd { display: inline; margin-left: var(--gap-3); color: var(--color-text-subtle); }
+.post__meta dd, .post__file dd { display: inline; margin-left: var(--gap-3); color: var(--color-text-subtle); overflow-wrap: anywhere; }
+.post__file a { overflow-wrap: anywhere; }
 .post__file a { color: var(--color-element-primary); text-decoration: underline; text-underline-offset: 3px; font-size: 16px; }
 .post__body { padding: 60px var(--padding-9) 55px; font-size: 17px; line-height: 28px; }
 .post__body p + p { margin-top: var(--gap-7); }

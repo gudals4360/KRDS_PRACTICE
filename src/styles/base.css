@@ -28,6 +28,13 @@ html:lang(zh-CN) {
 html:lang(zh-TW) {
   --font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Pretendard GOV', 'Pretendard', system-ui, sans-serif;
 }
+/* lang 속성이 붙은 요소(예: Language 메뉴의 '简体中文' '繁體中文')는 페이지 언어와 상관없이 해당 언어 글꼴로 */
+[lang='zh-CN']:not(html) {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+[lang='zh-TW']:not(html) {
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+}
 html:lang(zh-CN) body,
 html:lang(zh-TW) body {
   word-break: normal;

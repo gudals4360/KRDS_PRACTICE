@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--@include head-->
+    <title>천연기념물 동물 | 천연기념물센터</title>
+    <meta name="description" content="천연기념물 동물 전시존을 소개합니다." />
+  </head>
+  <body>
+    <!--@include header-->
+
+    <main id="main">
+      <section class="page-hero" aria-label="천연기념물센터 소개 배너">
+        <img class="page-hero__bg" src="./images/hero/animal-960.webp" srcset="./images/hero/animal-960.webp 960w, ./images/hero/animal.webp 1920w" sizes="100vw" width="1920" height="332" alt="" fetchpriority="high" />
+        <div class="page-hero__box">
+          <p class="page-hero__en">Natural Heritage Center</p>
+          <p>국내 유일의 자연유산 전문 전시관</p>
+          <p class="page-hero__name">천연기념물센터</p>
+        </div>
+      </section>
+
+      <div class="container sub-body">
+        <div class="page-title"><h1>천연기념물 동물</h1></div>
+        <div class="sub-content">
+          <section class="exhibit-card" aria-label="천연기념물 동물 전시존 소개">
+            <img class="exhibit-card__photo" src="./images/pages/ex-animal.webp" width="420" height="420" alt="수달 박제 표본" />
+            <div class="exhibit-card__body">
+              <h2>살아 숨 쉬는 천연기념물 ‘동물’ 전시존</h2>
+              <span class="exhibit-card__bar" aria-hidden="true"></span>
+              <p>천연기념물로 지정된 새와 포유류 등 다양한 동물의 표본을 만날 수 있다.</p><p>서식지와 생태 이야기를 함께 살펴보며 동물과 자연의 관계를 알아본다.</p>
+            </div>
+            <!-- 전시실 위치보기: 소개 패널(.exhibit-card) 오른쪽 아래에서 20px 띄워 고정 (absolute, right/bottom 20px) -->
+            <a class="btn btn--locate" href="./info-map.html">전시실 위치보기 {{icon:chevron-right:icon--sm}}</a>
+          </section>
+          <div class="exhibit-cta"><a class="btn btn--reserve" href="./group-visit.html#reservation">단체관람 예약</a></div>
+        </div>
+      </div>
+    </main>
+
+    <!--@include footer-->
+    <script type="module" src="../scripts/sub.js"></script>
+  </body>
+</html>

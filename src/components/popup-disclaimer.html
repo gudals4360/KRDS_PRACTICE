@@ -1,0 +1,18 @@
+<!-- 팝업 · 실습용 페이지 안내 (modal + scrim). 메인 접속 시 가장 먼저 표시, 닫으면 다음 팝업(신규 천연기념물 지정)이 이어서 열림. 동작: src/scripts/popup.js -->
+<div class="scrim" data-popup data-popup-key="disclaimer">
+  <div class="modal modal--notice" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title" aria-describedby="disclaimer-desc">
+    <button type="button" class="icon-btn modal__close" data-popup-close aria-label="팝업 닫기">{{icon:close}}</button>
+    <div class="modal__body modal__body--notice">
+      <h2 class="modal__title" id="disclaimer-title">해당 사이트는 UX/UI 디자인 실습용 페이지입니다.</h2>
+      <div id="disclaimer-desc" class="modal__text">
+        <p>절대 대한민국의 공식 사이트가 아니므로 주의해주시길 바랍니다.</p>
+        <p>또한, 내부에 있는 자료는 실제 데이터를 기반으로 했기 때문에 연락이나 자료 활용에 있어서도 주의해주시길 바랍니다.</p>
+      </div>
+    </div>
+    <div class="modal__actions">
+      <button type="button" class="btn btn--tertiary" data-popup-hide-today>오늘 하루 보지 않기</button>
+      <!-- TODO: '자세히 보기'의 이동 대상이 Figma에 정의되어 있지 않음. 지금은 팝업만 닫음. 대상 페이지가 정해지면 <a href> 로 교체 -->
+      <button type="button" class="btn btn--primary" data-popup-close>자세히 보기</button>
+    </div>
+  </div>
+</div>

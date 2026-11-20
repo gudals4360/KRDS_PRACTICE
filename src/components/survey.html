@@ -1,0 +1,21 @@
+<!-- 만족도 조사 (KRDS: radio + input + button). 저장 기능 없음: 화면 UI만 -->
+<section class="survey" aria-labelledby="survey-q">
+  <form class="survey__form" onsubmit="return false">
+    <div class="survey__head">
+      <h2 class="survey__q" id="survey-q">이 페이지의 정보와 사용편의성에 만족하시나요?</h2>
+      <fieldset class="radio-group">
+        <legend class="sr-only">만족도 선택</legend>
+        <label class="radio"><input type="radio" name="satisfaction" value="5" />매우만족</label>
+        <label class="radio"><input type="radio" name="satisfaction" value="4" />만족</label>
+        <label class="radio"><input type="radio" name="satisfaction" value="3" checked />보통</label>
+        <label class="radio"><input type="radio" name="satisfaction" value="2" />불만족</label>
+        <label class="radio"><input type="radio" name="satisfaction" value="1" />매우불만족</label>
+      </fieldset>
+    </div>
+    <div class="survey__row">
+      <label class="sr-only" for="survey-opinion">의견</label>
+      <input class="input" id="survey-opinion" type="text" placeholder="여러분의 소중한 의견을 남겨주세요." />
+      <button type="submit" class="btn btn--gray">확인</button>
+    </div>
+  </form>
+</section>

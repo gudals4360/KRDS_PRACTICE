@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--@include head-->
+    <title>공지사항 글쓰기 | 천연기념물센터</title>
+    <meta name="description" content="공지사항 글쓰기 화면입니다." />
+  </head>
+  <body>
+    <!--@include header-->
+
+    <main id="main">
+      <section class="page-hero page-hero--s" aria-label="천연기념물센터 소개 배너">
+        <img class="page-hero__bg" src="./images/hero/lobby-960.webp" srcset="./images/hero/lobby-960.webp 960w, ./images/hero/lobby.webp 1920w" sizes="100vw" width="1920" height="332" alt="" fetchpriority="high" />
+        <div class="page-hero__box">
+          <p class="page-hero__en">Natural Heritage Center</p>
+          <p>국내 유일의 자연유산 전문 전시관</p>
+          <p class="page-hero__name">천연기념물센터</p>
+        </div>
+      </section>
+
+      <div class="container sub-body">
+        <div class="page-title page-title--sm"><h1>공지사항</h1></div>
+        <div class="sub-content">
+          <form onsubmit="return false" aria-labelledby="w-title">
+            <h2 class="sub-h2" id="w-title">글쓰기</h2>
+            <!-- 저장 기능 없음: 화면(UI)만 구현 -->
+            <div class="form-table">
+              <div class="form-row"><label for="w-cat">분류</label><div class="form-row__field"><div class="select"><select id="w-cat"><option>분류 선택</option><option>공지</option><option>알림</option><option>공고</option></select></div></div></div>
+              <div class="form-row"><label for="w-title-in">제목</label><div class="form-row__field"><input class="input" id="w-title-in" type="text" placeholder="제목을 입력하세요." /></div></div>
+              <div class="form-row"><span class="form-row__label">상단 고정</span><div class="form-row__field"><label class="checkbox"><input type="checkbox" />공지로 상단에 고정</label></div></div>
+              <div class="form-row"><span class="form-row__label">첨부파일</span><div class="form-row__field"><div class="file-pick"><label class="btn btn--outline" for="w-file">파일 선택</label><input id="w-file" class="sr-only" type="file" /><span>선택된 파일이 없습니다.</span></div><p class="hint">파일당 최대 10MB까지 첨부할 수 있어요.</p></div></div>
+              <div class="form-row"><label for="w-body">내용</label><div class="form-row__field"><div class="editor"><div class="editor__bar" role="toolbar" aria-label="서식"><button type="button">B</button><button type="button">I</button><button type="button">U</button><button type="button">목록</button><button type="button">링크</button><button type="button">이미지</button></div><textarea id="w-body" placeholder="내용을 입력하세요."></textarea></div></div></div>
+            </div>
+            <div class="form-actions"><a class="btn btn--outline" href="./notice.html">취소</a><button type="submit" class="btn btn--primary btn--sm-primary">등록</button></div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--@include footer-->
+    <script type="module" src="../scripts/sub.js"></script>
+  </body>
+</html>

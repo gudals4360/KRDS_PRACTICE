@@ -1,0 +1,233 @@
+/* ==========================================================================
+   서브페이지 공통: 히어로 배너 / 페이지 제목 / 필 탭 / 섹션 제목 / 만족도 조사 / 사진 자리표시
+   ========================================================================== */
+
+/* ---------- 히어로 배너 (제목 박스 포함) ---------- */
+.page-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 332px;
+  overflow: hidden;
+  background: var(--color-element-gray);
+  color: var(--color-text-inverse);
+}
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-scrim);
+  opacity: 0.75;
+}
+.page-hero__box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-3);
+  width: min(720px, 100% - 2 * var(--container-gutter));
+  padding: var(--padding-9) var(--padding-8);
+  border: var(--border-width) solid var(--color-text-inverse);
+  text-align: center;
+  font-size: 20px;
+}
+.page-hero__en {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.page-hero__name {
+  font-weight: var(--font-weight-bold);
+}
+
+/* ---------- 페이지 제목 ---------- */
+.page-title {
+  padding-top: 56px;
+}
+.page-title h1 {
+  padding-bottom: var(--gap-7);
+  font-size: var(--fs-heading-xlarge);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-1);
+  line-height: 52px;
+  border-bottom: var(--border-width) solid var(--color-divider);
+}
+
+/* ---------- 필 탭 (종합안내: 설립개요 / 시설현황 / 전시안내도) ---------- */
+.pill-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-3);
+  margin-top: var(--gap-8);
+}
+.pill-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  height: var(--size-height-7);
+  padding-inline: var(--padding-8);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface-gray-subtler);
+  color: var(--color-text-subtle);
+  font-size: var(--fs-label-medium);
+}
+.pill-tabs__tab:hover {
+  background: var(--color-surface-secondary-subtler);
+}
+.pill-tabs__tab[aria-current='page'] {
+  background: var(--color-element-primary);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ---------- 본문 섹션 ---------- */
+.sub-body {
+  padding-bottom: 80px;
+}
+.sub-section {
+  margin-top: var(--gap-9);
+}
+.sub-section__title {
+  font-size: var(--fs-heading-large);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-1);
+  line-height: 45px;
+  margin-bottom: var(--gap-9);
+}
+
+/* ---------- 사진 자리표시 (나중에 교체) ---------- */
+.photo-ph {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  background: var(--color-surface-secondary-subtler);
+  color: var(--color-text-placeholder);
+  font-size: var(--fs-body-small);
+  text-align: center;
+}
+
+/* ---------- 만족도 조사 ---------- */
+.survey {
+  margin-top: 80px;
+  padding: var(--padding-9);
+  border: var(--border-width) solid var(--color-border-gray-light);
+}
+.survey__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap-3) var(--gap-8);
+}
+.survey__q {
+  font-size: var(--fs-heading-small);
+  font-weight: var(--font-weight-bold);
+}
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-3) var(--gap-5);
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-2);
+  cursor: pointer;
+  font-size: var(--fs-label-small);
+}
+.radio input {
+  appearance: none;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 2px solid var(--color-border-gray);
+  border-radius: var(--radius-max);
+  background: var(--color-surface-white);
+  cursor: pointer;
+}
+.radio input:checked {
+  border-color: var(--color-element-primary);
+  background: radial-gradient(circle, var(--color-element-primary) 0 5px, var(--color-surface-white) 6px);
+}
+.survey__row {
+  display: flex;
+  gap: var(--gap-3);
+  margin-top: var(--gap-7);
+}
+
+/* ---------- 입력창 / 버튼(회색) ---------- */
+.input {
+  flex: 1;
+  min-width: 0;
+  height: var(--size-height-8);
+  padding-inline: var(--padding-6);
+  border: var(--border-width) solid var(--color-border-gray);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-white);
+  font: inherit;
+  font-size: var(--fs-label-medium);
+  color: var(--color-text-basic);
+}
+.input::placeholder {
+  color: var(--color-text-placeholder);
+}
+.btn--gray {
+  height: var(--size-height-8);
+  min-width: 96px;
+  background: var(--color-element-gray);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+}
+.btn--gray:hover {
+  background: var(--color-text-subtle);
+}
+
+@media (max-width: 834px) {
+  .page-hero {
+    height: 330px;
+  }
+  .survey {
+    margin-top: 80px;
+    padding: var(--padding-8);
+  }
+  .survey__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  .page-hero,
+  .page-hero--s,
+  .page-hero--l {
+    height: 359px;
+  }
+  .page-hero__box {
+    padding-block: var(--padding-8);
+  }
+  .page-hero__en {
+    letter-spacing: 3px;
+  }
+  .page-title h1 {
+    font-size: 36px;
+  }
+  .pill-tabs__tab {
+    padding-inline: var(--padding-6);
+    height: var(--size-height-6);
+    font-size: var(--fs-label-small);
+  }
+  .survey__row {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,17 @@
+<!-- 팝업 · 신규 천연기념물 지정 (modal + scrim). 동작: src/scripts/popup.js -->
+<div class="scrim" id="new-heritage-popup" data-popup data-popup-key="new-heritage" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+    <button type="button" class="icon-btn modal__close" data-popup-close aria-label="팝업 닫기">{{icon:close}}</button>
+    <div class="modal__body">
+      <img class="modal__photo" src="./images/main/popup-baekseoktan-700.webp" width="700" height="441" fetchpriority="low" alt="청송 고와리 백석탄 돌개구멍의 암반 지형" />
+      <span class="badge badge--success">11월 신규 지정</span>
+      <h2 class="modal__title" id="popup-title">1. 새로운 천연기념물 탄생!</h2>
+      <p id="popup-desc">청송 고와리 백석탄 돌개구멍이 천연기념물로 지정되었습니다. 11월 19일 공식 고시까지 확인되었습니다.</p>
+      <p class="modal__source">출처 · 대한민국 정책브리핑</p>
+    </div>
+    <div class="modal__actions">
+      <button type="button" class="btn btn--tertiary" data-popup-hide-today>오늘 하루 보지 않기</button>
+      <a class="btn btn--primary" href="./notice-article.html" data-popup-more>자세히 보기<span class="sr-only"> : 신규 천연기념물 지정 기사</span></a>
+    </div>
+  </div>
+</div>

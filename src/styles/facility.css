@@ -1,0 +1,173 @@
+/* ==========================================================================
+   종합안내 · 시설현황: 시설 뷰어 + 수치 카드
+   ========================================================================== */
+
+/* ---------- 시설 뷰어 (Figma 변수 모드 '시설 뷰어' → data-facility / aria-selected) ---------- */
+.viewer {
+  display: flex;
+  margin-top: var(--gap-9);
+  border: var(--border-width) solid var(--color-border-gray-light);
+  background: var(--color-surface-white);
+}
+.viewer__photos {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 540px;
+  background: var(--color-surface-gray-subtler);
+}
+.viewer__photo {
+  width: 100%;
+  height: 100%;
+}
+.viewer__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.viewer__list {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 320px;
+}
+.viewer__item {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-4);
+  flex: 1;
+  padding-inline: var(--padding-8);
+  border-bottom: var(--border-width) solid var(--color-border-gray-light);
+  background: var(--color-surface-white);
+  color: var(--color-text-basic);
+  font-size: var(--fs-heading-medium);
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+}
+.viewer__item:last-child {
+  border-bottom: 0;
+}
+.viewer__item:hover {
+  background: var(--color-surface-gray-subtler);
+}
+.viewer__num {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-max);
+  background: var(--color-border-gray-light);
+  color: var(--color-text-basic);
+  font-size: var(--fs-label-small);
+  font-weight: var(--font-weight-bold);
+}
+/* 선택 상태 */
+.viewer__item[aria-selected='true'] {
+  background: var(--color-element-primary);
+  color: var(--color-text-inverse);
+}
+.viewer__item[aria-selected='true'] .viewer__num {
+  background: var(--color-surface-white);
+  color: var(--color-element-primary);
+}
+.viewer__item:focus-visible {
+  outline-offset: -4px;
+  outline-color: var(--color-text-basic);
+}
+
+/* ---------- 수치 카드 ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-3);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 276px;
+  padding: var(--padding-9) var(--padding-6) var(--padding-8);
+  border: var(--border-width) solid var(--color-border-gray-light);
+  text-align: center;
+}
+.stat__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-max);
+  object-fit: cover;
+}
+.stats--exhibits .stat {
+  min-height: 240px;
+}
+.stats--exhibits .stat__icon {
+  width: 64px;
+  height: 64px;
+}
+.stat__label {
+  margin-top: var(--gap-5);
+  font-size: var(--fs-heading-small);
+  font-weight: var(--font-weight-bold);
+}
+.stat__line {
+  width: 40px;
+  height: 1px;
+  margin-block: var(--gap-3);
+  border: 0;
+  background: var(--color-border-gray-light);
+}
+.stat__value {
+  font-size: var(--fs-heading-small);
+}
+.stat__note {
+  margin-top: var(--gap-3);
+  font-size: var(--fs-body-small);
+  color: var(--color-text-subtle);
+}
+.stats--exhibits .stat__value {
+  font-size: var(--fs-heading-large);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-element-primary);
+}
+
+@media (max-width: 834px) {
+  .viewer__photos {
+    height: 540px;
+  }
+  .viewer__list {
+    width: 280px;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .viewer {
+    flex-direction: column;
+  }
+  .viewer__photos {
+    height: 240px;
+  }
+  .viewer__list {
+    width: 100%;
+  }
+  .viewer__item {
+    flex: none;
+    height: 72px;
+    padding-inline: var(--padding-6);
+    font-size: var(--fs-heading-small);
+  }
+  .stat {
+    min-height: 305px;
+    padding-inline: var(--padding-3);
+  }
+  .stats--exhibits .stat {
+    min-height: 250px;
+  }
+  .stat__value {
+    font-size: var(--fs-body-medium);
+  }
+  .stats--exhibits .stat__value {
+    font-size: var(--fs-heading-medium);
+  }
+}

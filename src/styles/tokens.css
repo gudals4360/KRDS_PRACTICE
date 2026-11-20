@@ -1,0 +1,127 @@
+/* ==========================================================================
+   KRDS 디자인 토큰 — Figma 변수(primitive / responsive / mode / semantic)를 CSS 변수로 옮김
+   하드코딩 색상 금지: 컴포넌트 CSS는 반드시 이 변수만 사용한다.
+   ========================================================================== */
+:root {
+  /* ---- primitive: 색상 ---- */
+  --prim-white: #ffffff;
+  --prim-gray-5: #f4f5f6;
+  --prim-gray-10: #eef2f7; /* secondary-subtler 계열 */
+  --prim-gray-20: #cdd1d5;
+  --prim-gray-30: #b1b8be;
+  --prim-gray-50: #6d7882;
+  --prim-gray-70: #464c53;
+  --prim-gray-80: #33363d;
+  --prim-gray-90: #1e2124;
+  --prim-primary-50: #256ef4;
+  --prim-primary-60: #0b50d0;
+  --prim-secondary-70: #063a74;
+  --prim-secondary-80: #052b57;
+  --prim-success-5: #eaf6ec;
+  --prim-success-60: #267337;
+  --prim-black-60: rgba(0, 0, 0, 0.6);
+
+  /* ---- semantic: 색상 ---- */
+  --color-text-basic: var(--prim-gray-90);
+  --color-text-subtle: var(--prim-gray-70);
+  --color-text-secondary: var(--prim-secondary-80);
+  --color-text-success: var(--prim-success-60);
+  --color-text-inverse: var(--prim-white);
+  --color-text-link: var(--prim-primary-50);
+  --color-text-placeholder: var(--prim-gray-50);
+  --color-surface-white: var(--prim-white);
+  --color-surface-gray-subtler: var(--prim-gray-5);
+  --color-surface-secondary-subtler: var(--prim-gray-10);
+  --color-surface-success: var(--prim-success-5);
+  --color-bg-white: var(--prim-white);
+  --color-border-gray: var(--prim-gray-30);
+  --color-border-gray-light: var(--prim-gray-20);
+  --color-border-gray-darker: var(--prim-gray-90);
+  --color-border-secondary: var(--prim-secondary-70);
+  --color-border-focus: var(--prim-primary-50);
+  --color-divider: var(--prim-gray-20);
+  --color-icon-gray: var(--prim-gray-80);
+  --color-element-primary: var(--prim-primary-50);
+  --color-element-gray: var(--prim-gray-50);
+  --color-element-logo-text: #575756; /* Figma: color/element/logo-text */
+  --color-button-primary-fill: var(--prim-primary-50);
+  --color-button-primary-hover: var(--prim-primary-60);
+  --color-button-secondary-fill: var(--prim-secondary-70);
+  --color-button-tertiary-border: #58616a; /* Figma: color/button/tertiary-border */
+  --color-scrim: var(--prim-black-60);
+
+  /* ---- 그림자 ---- */
+  --shadow-mega: 0 8px 16px rgba(0, 0, 0, 0.12);
+
+  /* ---- 간격 (gap / padding) ---- */
+  --gap-1: 2px;
+  --gap-2: 4px;
+  --gap-3: 8px;
+  --gap-4: 12px;
+  --gap-5: 16px;
+  --gap-7: 24px;
+  --gap-8: 32px;
+  --gap-9: 40px;
+  --gap-11: 64px;
+  --padding-1: 2px;
+  --padding-2: 4px;
+  --padding-3: 8px;
+  --padding-4: 10px;
+  --padding-5: 12px;
+  --padding-6: 16px;
+  --padding-8: 24px;
+  --padding-9: 32px;
+  --padding-card-medium: 32px;
+
+  /* ---- 크기 / 반경 / 선 ---- */
+  --size-height-4: 24px;
+  --size-height-5: 32px;
+  --size-height-6: 40px;
+  --size-height-7: 48px;
+  --size-height-8: 56px;
+  --radius-small: 4px;
+  --radius-medium: 6px;
+  --radius-xlarge: 12px;
+  --radius-max: 1000px;
+  --border-width: 1px;
+
+  /* ---- 레이아웃 ---- */
+  --container-max: 1200px;
+  --container-gutter: 24px; /* 좁은 화면에서 좌우 여백 */
+  --carousel-photo-height: 560px;
+  --carousel-panel-width: 282px;
+  --carousel-gap-x: 24px;
+
+  /* ---- 타이포그래피 ---- */
+  /* TODO: Pretendard GOV 정식 웹폰트가 확보되면 폰트 파일을 교체. 현재 Pretendard → Noto Sans KR 순 fallback */
+  --font-family: 'Pretendard GOV', 'Pretendard', 'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height: 1.5;
+  --letter-spacing-0: 0;
+  --letter-spacing-1: 1px;
+  --fs-heading-xlarge: 40px;
+  --fs-heading-large: 32px;
+  --fs-heading-medium: 24px;
+  --fs-heading-small: 19px;
+  --fs-heading-xsmall: 17px;
+  --fs-body-medium: 17px;
+  --fs-body-small: 15px;
+  --fs-label-medium: 17px;
+  --fs-label-small: 15px;
+  --fs-nav-title: 19px;
+  --fs-nav-depth: 17px;
+}
+
+/* responsive 변수: Tablet(≤ 834px) / Mobile(≤ 390px 기준, ≤ 600px 적용) */
+@media (max-width: 834px) {
+  :root {
+    --fs-heading-large: 28px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --fs-heading-large: 24px;
+    --fs-heading-medium: 21px;
+  }
+}

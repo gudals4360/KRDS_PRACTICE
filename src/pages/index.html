@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--@include head-->
+    <title>천연기념물센터</title>
+    <meta name="description" content="국내 유일의 자연유산 전문 전시관, 천연기념물센터 메인 페이지입니다." />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <!-- 첫 팝업(안내)은 첫 렌더부터 보이도록 마크업에 열어 두고, "오늘 하루 보지 않기" 상태면 렌더 전에 숨김
+         (키 규칙은 popup.js 의 storageKey 와 동일: `${key}-popup-hidden-until`) -->
+    <script>
+      try {
+        ['disclaimer', 'new-heritage'].forEach(function (k) {
+          if (Number(localStorage.getItem(k + '-popup-hidden-until')) > Date.now()) document.documentElement.classList.add('no-popup-' + k);
+        });
+      } catch (e) {}
+    </script>
+    <noscript><style>[data-popup]{display:none}</style></noscript>
+    <link rel="preload" as="image" href="./images/main/slide-1-heritage-900.webp" imagesrcset="./images/main/slide-1-heritage-450.webp 450w, ./images/main/slide-1-heritage-900.webp 900w" imagesizes="(max-width: 1023px) 100vw, 900px" fetchpriority="high" />
+  </head>
+  <body class="page-main">
+    <!--@include header-->
+
+    <main id="main">
+      <!-- 1. 히어로 슬라이드 -->
+      <section class="hero container" aria-roledescription="carousel" aria-label="전시존 소개">
+        <div class="hero__stage">
+          <p class="hero__counter" aria-hidden="true"><span data-hero-current>1</span> / <span data-hero-total>6</span></p>
+          <ul class="hero__slides" data-hero-slides aria-live="off">
+            <li class="hero__slide" aria-label="1 / 6">
+              <img src="./images/main/slide-1-heritage-900.webp" srcset="./images/main/slide-1-heritage-450.webp 450w, ./images/main/slide-1-heritage-900.webp 900w" sizes="(max-width: 1023px) 100vw, 900px" width="900" height="445" alt="우리 기술로 복원된 매머드 골격화석과 영상 전시물이 있는 한반도 자연유산 전시존" fetchpriority="high" />
+            </li>
+            <li class="hero__slide" aria-label="2 / 6" hidden>
+              <img src="./images/main/slide-2-scenic-900.webp" width="900" height="445" alt="명승 전시존 전경" loading="lazy" />
+            </li>
+            <li class="hero__slide" aria-label="3 / 6" hidden>
+              <img src="./images/main/slide-3-plant-900.webp" width="900" height="445" alt="식물 전시존 전경" loading="lazy" />
+            </li>
+            <li class="hero__slide" aria-label="4 / 6" hidden>
+              <img src="./images/main/slide-4-animal-900.webp" width="900" height="445" alt="동물 전시존 전경" loading="lazy" />
+            </li>
+            <li class="hero__slide" aria-label="5 / 6" hidden>
+              <img src="./images/main/slide-5-geology-900.webp" width="900" height="445" alt="지질 전시존 전경" loading="lazy" />
+            </li>
+            <li class="hero__slide" aria-label="6 / 6" hidden>
+              <img src="./images/main/slide-6-reserve-900.webp" width="900" height="445" alt="천연보호구역 전시존 전경" loading="lazy" />
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero__panel">
+          <div class="hero__texts" aria-live="polite">
+            <!-- TODO: 2~6번 슬라이드의 리드 문구는 Figma에 별도 문구가 없어 전시존 이름만 표기. 확정 문구로 교체 -->
+            <div class="hero__text" data-hero-text>
+              <p class="hero__lead">우리 기술로 복원된 매머드 골격화석이 있는</p>
+              <h2 class="hero__title">한반도 자연유산 전시존</h2>
+              <a class="hero__href" href="./exhibit-heritage.html" hidden></a>
+            </div>
+            <div class="hero__text" data-hero-text hidden>
+              <p class="hero__lead">우리나라의 아름다운 자연경관을 만나는</p>
+              <h2 class="hero__title">명승 전시존</h2>
+              <a class="hero__href" href="./exhibit-scenic.html" hidden></a>
+            </div>
+            <div class="hero__text" data-hero-text hidden>
+              <p class="hero__lead">천연기념물 나무와 식물을 만나는</p>
+              <h2 class="hero__title">식물 전시존</h2>
+              <a class="hero__href" href="./exhibit-plant.html" hidden></a>
+            </div>
+            <div class="hero__text" data-hero-text hidden>
+              <p class="hero__lead">천연기념물 동물을 만나는</p>
+              <h2 class="hero__title">동물 전시존</h2>
+              <a class="hero__href" href="./exhibit-animal.html" hidden></a>
+            </div>
+            <div class="hero__text" data-hero-text hidden>
+              <p class="hero__lead">땅이 간직한 지질 유산을 만나는</p>
+              <h2 class="hero__title">지질 전시존</h2>
+              <a class="hero__href" href="./exhibit-geology.html" hidden></a>
+            </div>
+            <div class="hero__text" data-hero-text hidden>
+              <p class="hero__lead">보호받는 자연을 만나는</p>
+              <h2 class="hero__title">천연보호구역 전시존</h2>
+              <a class="hero__href" href="./exhibit-reserve.html" hidden></a>
+            </div>
+          </div>
+
+          <dl class="hero__info">
+            <dt>관람시간</dt>
+            <dd>3월 ~ 10월<br />09:30 ~ 17:30</dd>
+            <dd>11월 ~ 02월<br />10:00 ~ 17:00</dd>
+            <dd>입장마감 관람마감 30분전까지</dd>
+            <dd>관람료 무료</dd>
+            <dd>휴관일 매주 월요일, 설, 추석</dd>
+          </dl>
+
+          <ul class="hero__links">
+            <li><a class="link-more" href="./exhibit-heritage.html" data-hero-detail>자세히보기 {{icon:chevron-right:icon--sm}}</a></li>
+            <li><a class="link-more" href="./group-visit.html#reservation">예약하기 {{icon:chevron-right:icon--sm}}</a></li>
+          </ul>
+
+          <div class="hero__ctrl" role="group" aria-label="슬라이드 제어">
+            <button type="button" class="round-btn" data-hero-prev aria-label="이전 슬라이드">{{icon:chevron-left:icon--sm}}</button>
+            <div class="dots" data-hero-dots aria-hidden="true"></div>
+            <button type="button" class="round-btn" data-hero-next aria-label="다음 슬라이드">{{icon:chevron-right:icon--sm}}</button>
+            <button type="button" class="round-btn" data-hero-toggle aria-label="자동 재생 정지">{{icon:pause:icon--sm}}</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 지금 만나는 전시 -->
+      <section class="now container" aria-labelledby="now-title">
+        <h2 class="section-title" id="now-title">지금 만나는 전시</h2>
+        <div class="now__grid">
+          <div class="now__carousel">
+            <button type="button" class="round-btn round-btn--lg" data-now-prev aria-label="이전 전시">{{icon:chevron-left}}</button>
+            <ul class="now__track" data-now-track tabindex="0" aria-label="전시 목록">
+              <li class="now-card">
+                <img src="./images/main/quick-group.webp" width="800" height="667" alt="" loading="lazy" />
+                <h3>단체 관람 예약</h3>
+                <p>단체관람 예약은 전시관 안내데스크(042-610-7610)로 문의주시기 바랍니다.</p>
+                <a class="link-more" href="./group-visit.html">자세히보기 {{icon:arrow-right:icon--sm}}</a>
+              </li>
+              <li class="now-card">
+                <img src="./images/main/quick-edu.webp" width="800" height="667" alt="" loading="lazy" />
+                <h3>교육 프로그램 예약</h3>
+                <p>국내 유일의 자연유산 전문 전시관 천연기념물센터에서 교육 프로그램을 진행해보시길 바랍니다.</p>
+                <!-- TODO: 교육안내 외부 링크 주소 미정 -->
+                <a class="link-more" href="#">자세히보기 {{icon:arrow-right:icon--sm}}</a>
+              </li>
+              <li class="now-card">
+                <img src="./images/main/quick-notice.webp" width="149" height="145" alt="" loading="lazy" />
+                <h3>알립니다</h3>
+                <p>본 기념물 센터는 국가에서 운영하는 천연기념물센터로 다양한 천연기념물을 소개하는 역할을 하고 있습니다</p>
+                <a class="link-more" href="./notice.html">자세히 보기<span class="sr-only"> : 알립니다</span> {{icon:arrow-right:icon--sm}}</a>
+              </li>
+            </ul>
+            <button type="button" class="round-btn round-btn--lg" data-now-next aria-label="다음 전시">{{icon:chevron-right}}</button>
+          </div>
+          <div class="now__dots dots" data-now-dots aria-hidden="true"></div>
+
+          <aside class="now__banner" aria-label="바로가기">
+            <h3>천연기념물센터</h3>
+            <p>국내 유일의 자연유산 전문 전시관</p>
+            <ul>
+              <!-- TODO: 온라인 예약 서비스 외부 링크 미정 -->
+              <li><a href="./reservation.html">{{icon:chevron-left:icon--sm}} 온라인 예약 서비스</a></li>
+              <li><a href="./notice.html">{{icon:chevron-left:icon--sm}} 알립니다</a></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 3. 뉴스 -->
+      <section class="news container" aria-labelledby="news-title">
+        <h2 class="section-title" id="news-title">뉴스</h2>
+        <div class="news__bar">
+          <div class="tabs" role="tablist" aria-label="뉴스 분류" data-news-tabs>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="true" data-filter="all">전체</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="notice">공지사항</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="resources">일반자료실</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="videos">영상자료실</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="faq">자주묻는 질문</button>
+          </div>
+          <a class="link-more news__more" href="./notice.html">더보기 {{icon:plus:icon--sm}}</a>
+        </div>
+        <ul class="news__list" data-news-list>
+          <li class="news-card" data-cat="notice">
+            <img src="./images/main/news-1.webp" width="334" height="329" alt="" loading="lazy" />
+            <div class="news-card__body">
+              <h3><a href="./notice-view.html">천연기념물센터 아프리카코끼리 골격표본 전시공사 완료 및 신규 전시 안내</a></h3>
+              <p>천연기념물센터 「한반도의 자연유산」 전시구역 내 아프리카코끼리 골격표본 설치공사가 완료되어 새롭게 전시를 시작하였습니다.</p>
+              <p class="news-card__extra">이번 전시를 통해 국내 최초로 털매머드 골격화석과 아프리카코끼리 골격표본을 한 공간에서 함께 만나보실 수 있습니다.</p>
+              <a class="link-more" href="./notice-view.html">자세히보기 {{icon:arrow-right:icon--sm}}</a>
+            </div>
+          </li>
+          <li class="news-card" data-cat="notice">
+            <img src="./images/main/news-2.webp" width="334" height="329" alt="" loading="lazy" />
+            <div class="news-card__body">
+              <h3><a href="./notice-view.html">대학생 멘토와 함께하는 「자유대전 멘토링 프로그램」 11월 참가자를 모집합니다.</a></h3>
+              <p>대학생 멘토와 함께하는 「자유대전 멘토링 프로그램」 11월 참가자를 모집합니다.</p>
+              <p class="news-card__extra">본 프로그램은 자연유산에 관심 있는 초등학생을 대상으로, 전문 멘토(대학생)가 진행하는 강의와 체험 중심의 교육 프로그램입니다.</p>
+              <a class="link-more" href="./notice-view.html">자세히보기 {{icon:arrow-right:icon--sm}}</a>
+            </div>
+          </li>
+        </ul>
+        <p class="news__empty" data-news-empty hidden>해당 분류의 소식이 없습니다.</p>
+      </section>
+
+      <!-- 4. 전시관 안내도 -->
+      <section class="map container" aria-label="전시관 안내도">
+        <div class="map__box">
+          <img class="map__img" src="./images/main/map.webp" width="1600" height="750" alt="천연기념물센터 전시관 안내도: 출입구, 식물 전시존, 지질 전시존, 천연보호구역, 명승, 한반도의 자연유산 위치" loading="lazy" />
+          <a class="map__card" href="./exhibit-plant.html" aria-label="식물 전시존 자세히 보기: 천연기념물 나무와 식물을 만나는 곳">
+            <img src="./images/main/slide-3-plant.webp" width="320" height="158" alt="" loading="lazy" />
+            <span class="map__card-body">
+              <strong>식물 전시존</strong>
+              <span>천연기념물 나무와 식물을 만나는 곳</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!--@include footer-->
+
+    <!-- 메인 팝업 (컴포넌트로 분리): 실습용 페이지 안내 → 신규 천연기념물 지정 순서로 열림 -->
+    <!--@include popup-disclaimer-->
+    <!--@include popup-new-heritage-->
+
+    <script type="module" src="../scripts/main.js"></script>
+  </body>
+</html>

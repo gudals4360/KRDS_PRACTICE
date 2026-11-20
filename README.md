@@ -23,9 +23,9 @@ npm run preview  # 빌드 결과 미리보기
 
 ## 다국어(i18n)
 
-키 기반 사전 방식입니다. 한국어가 기본이며(HTML에 그대로 들어 있음), 영어는 사전으로 교체합니다.
+키 기반 사전 방식입니다. 한국어가 기본이며(HTML에 그대로 들어 있음), 영어·중국어 간체(zh-CN)·중국어 번체(zh-TW)는 사전으로 교체합니다.
 
-- 사전: `src/i18n/ko.json`, `src/i18n/en.json` (같은 키 구조). 필요할 때만 동적으로 불러옵니다.
+- 사전: `src/i18n/ko.json`, `en.json`, `zh-CN.json`, `zh-TW.json` (같은 키 구조). 필요할 때만 동적으로 불러옵니다.
 - 마크업: `data-i18n="key"`(텍스트), `data-i18n-html="key"`(줄바꿈·강조가 섞인 문구), `data-i18n-attr="alt:key;aria-label:key2"`(속성)
 - 언어 선택: 오른쪽 상단 **Language** 버튼(지구본 아이콘). 선택은 `localStorage('lang')`에 저장되고 `?lang=en` 으로도 지정할 수 있습니다.
 - 메뉴(`src/components/menu-data.json`)는 항목마다 `key` 가 있어 빌드 시 `data-i18n` 으로 출력됩니다.

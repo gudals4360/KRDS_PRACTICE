@@ -4,7 +4,7 @@
 //   data-i18n-attr="attr:key;attr2:key2" → 속성(alt, aria-label, placeholder, content …) 교체
 // 새 언어 추가: ① src/i18n/ja.json 작성(ko.json 의 모든 키) ② 아래 LANGS·INLINE 에 등록 ③ header.html 의 Language 메뉴에 항목 추가
 // 사전(JSON)은 필요할 때만 동적으로 불러온다 → 한국어(기본) 사용자는 추가 다운로드가 없다.
-export const LANGS = ['ko', 'en'];
+export const LANGS = ['ko', 'en', 'zh-CN', 'zh-TW'];
 const DEFAULT_LANG = 'ko'; // 마크업(HTML)에 들어 있는 기본 언어
 const STORAGE_KEY = 'lang';
 
@@ -12,7 +12,22 @@ const STORAGE_KEY = 'lang';
 const INLINE = {
   ko: { 'js.menu.open': '전체 메뉴 열기', 'js.menu.close': '전체 메뉴 닫기', 'js.hero.pause': '자동 재생 정지', 'js.hero.play': '자동 재생 시작' },
   en: { 'js.menu.open': 'Open full menu', 'js.menu.close': 'Close full menu', 'js.hero.pause': 'Pause autoplay', 'js.hero.play': 'Start autoplay' },
+  'zh-CN': { 'js.menu.open': '打开全部菜单', 'js.menu.close': '关闭全部菜单', 'js.hero.pause': '暂停自动播放', 'js.hero.play': '开始自动播放' },
+  'zh-TW': { 'js.menu.open': '開啟全部選單', 'js.menu.close': '關閉全部選單', 'js.hero.pause': '暫停自動播放', 'js.hero.play': '開始自動播放' },
 };
+// 중국어는 한자 글리프가 없는 환경을 위해 웹폰트를 필요할 때만 추가로 불러온다
+const CJK_FONTS = {
+  'zh-CN': 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap',
+  'zh-TW': 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap',
+};
+function loadFont(lang) {
+  const href = CJK_FONTS[lang];
+  if (!href || document.querySelector(`link[href="${href}"]`)) return;
+  const l = document.createElement('link');
+  l.rel = 'stylesheet';
+  l.href = href;
+  document.head.append(l);
+}
 const loaded = {}; // lang -> 사전
 let current = DEFAULT_LANG;
 
@@ -44,6 +59,7 @@ export function t(key) {
 
 export async function applyLang(lang, { persist = false } = {}) {
   if (!LANGS.includes(lang)) return;
+  loadFont(lang);
   await load(lang);
   current = lang;
   document.documentElement.lang = lang;

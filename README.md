@@ -31,3 +31,8 @@ npm run preview  # 빌드 결과 미리보기
 - 메뉴(`src/components/menu-data.json`)는 항목마다 `key` 가 있어 빌드 시 `data-i18n` 으로 출력됩니다.
 - 새 언어 추가: `src/i18n/<lang>.json` 작성 → `src/scripts/i18n.js` 의 `LANGS`·`INLINE` 등록 → `src/components/header.html` 의 Language 메뉴에 항목 추가.
 - 문구를 바꿀 때는 HTML의 한국어 텍스트와 `ko.json`, `en.json` 의 같은 키를 함께 수정하세요.
+
+## 팝업 다시 보기
+
+메인의 팝업은 '오늘 하루 보지 않기'를 누르면 24시간 동안 숨겨집니다(브라우저 저장소 사용). 다시 보려면 주소 뒤에 `?popup=show` 를 붙여 여세요.
+예: `https://krds-practice.vercel.app/index.html?popup=show`

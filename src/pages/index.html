@@ -10,6 +10,10 @@
          (키 규칙은 popup.js 의 storageKey 와 동일: `${key}-popup-hidden-until`) -->
 <script>
       try {
+        // ?popup=show 로 열면 '오늘 하루 보지 않기' 설정을 지우고 팝업을 다시 띄움 (확인·테스트용)
+        if (/[?&]popup=show/.test(location.search)) {
+          ['disclaimer', 'new-heritage'].forEach(function (k) { localStorage.removeItem(k + '-popup-hidden-until'); });
+        }
         ['disclaimer', 'new-heritage'].forEach(function (k) {
           if (Number(localStorage.getItem(k + '-popup-hidden-until')) > Date.now()) document.documentElement.classList.add('no-popup-' + k);
         });

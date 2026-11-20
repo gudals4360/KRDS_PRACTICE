@@ -145,18 +145,22 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--carousel-panel-width);
   grid-template-areas: 'carousel banner' 'dots banner';
+  /* 카드 행(1fr)이 오른쪽 배너 높이를 따라 늘어나고, 점 표시 줄이 배너 바닥에 닿는다 */
+  grid-template-rows: 1fr auto;
   gap: var(--gap-7) var(--carousel-gap-x);
   margin-top: var(--gap-7);
   align-items: start;
 }
 .now__carousel {
   grid-area: carousel;
+  align-self: stretch;
   display: flex;
   align-items: center;
   gap: var(--gap-5);
   min-width: 0;
 }
 .now__track {
+  align-self: stretch;
   position: relative; /* 안쪽 .sr-only(absolute)가 스크롤 영역 밖으로 삐져나가 페이지 폭을 늘리지 않도록 */
   display: flex;
   gap: var(--carousel-gap-x);
@@ -178,8 +182,10 @@
   gap: var(--gap-3);
 }
 .now-card img {
+  flex: 1 1 0; /* 글 영역을 뺀 남는 높이를 사진이 모두 채운다(배너 높이에 맞춰짐) */
+  min-height: 140px;
   width: 100%;
-  aspect-ratio: 234 / 196;
+  aspect-ratio: auto;
   object-fit: cover;
   border-radius: var(--radius-xlarge);
   background: var(--color-surface-secondary-subtler);
@@ -193,7 +199,8 @@
   font-size: var(--fs-body-small);
   color: var(--color-text-subtle);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3; /* 카드가 길어진 만큼 설명도 한 줄 더 보여 준다 (태블릿은 4줄, 모바일은 2줄) */
+  min-height: 4.5em; /* 줄 수가 달라도 카드마다 사진 높이가 같도록 3줄 높이를 확보 */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -430,6 +437,10 @@
   .now-card {
     flex-basis: calc((100% - var(--carousel-gap-x)) / 2);
   }
+  .now-card p {
+    -webkit-line-clamp: 4;
+    min-height: 6em;
+  }
   .news-card {
     flex-direction: column;
   }
@@ -454,6 +465,26 @@
 /* ==========================================================================
    Mobile (≤ 600px)
    ========================================================================== */
+/* 820px 이하: 카드가 너무 좁아지지 않도록 배너를 카드 아래로 내린다 (사진 높이 늘림 해제). 태블릿 834px는 2열 유지 */
+@media (max-width: 820px) {
+  .now__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'carousel' 'dots' 'banner';
+    grid-template-rows: auto;
+  }
+  .now-card img {
+    flex: none;
+    aspect-ratio: 234 / 196;
+    min-height: 0;
+  }
+  .now-card p {
+    -webkit-line-clamp: 3;
+    min-height: 4.5em;
+  }
+  .now__banner {
+    min-height: 0;
+  }
+}
 @media (max-width: 600px) {
   .hero__panel {
     min-height: 453px; /* 한국어 기준 최대 높이로 고정 (슬라이드·언어가 바뀌어도 동일) */
@@ -464,15 +495,12 @@
   .hero__title {
     font-size: var(--fs-heading-medium);
   }
-  .now__grid {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: 'carousel' 'dots' 'banner';
+  .now-card p {
+    -webkit-line-clamp: 2;
+    min-height: 3em;
   }
   .now-card {
     flex-basis: 100%;
-  }
-  .now__banner {
-    min-height: 0;
   }
   .news__list {
     grid-template-columns: 1fr;
@@ -509,4 +537,9 @@ html:lang(en) .hero__info { font-size: 12px; line-height: 1.4; }
   html:lang(en) .hero__lead { font-size: 13px; }
   html:lang(en) .hero__title { font-size: 18px; }
   html:lang(en) .hero__info { font-size: 12px; }
+}
+
+/* 영어는 제목이 두 줄로 꺾이는 카드가 있어, 카드끼리 사진 높이가 같도록 제목 영역을 두 줄 높이로 확보 */
+html:lang(en) .now-card h3 {
+  min-height: calc(var(--fs-heading-xsmall) * 1.5 * 2);
 }

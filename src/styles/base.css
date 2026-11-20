@@ -20,11 +20,13 @@ body {
   overflow-wrap: break-word;
 }
 /* 중국어: 한자 글리프용 글꼴 폴백, 한글용 keep-all 줄바꿈 해제(한자는 글자 단위로 줄바꿈) */
+/* 중국어 글꼴을 Pretendard 보다 앞에 둔다: Pretendard 는 한국 한자(合·料·室 등)만 가지고 있어,
+   뒤에 두면 한 단어 안에서 글자마다 글꼴·크기가 달라 보인다(예: 综合资料室). */
 html:lang(zh-CN) {
-  --font-family: 'Pretendard GOV', 'Pretendard', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Noto Sans KR', system-ui, sans-serif;
+  --font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Pretendard GOV', 'Pretendard', system-ui, sans-serif;
 }
 html:lang(zh-TW) {
-  --font-family: 'Pretendard GOV', 'Pretendard', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', 'Noto Sans KR', system-ui, sans-serif;
+  --font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Pretendard GOV', 'Pretendard', system-ui, sans-serif;
 }
 html:lang(zh-CN) body,
 html:lang(zh-TW) body {

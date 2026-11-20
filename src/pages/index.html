@@ -122,8 +122,8 @@
                 <img src="./images/main/quick-edu.webp" width="800" height="667" alt="" loading="lazy" />
                 <h3>교육 프로그램 예약</h3>
                 <p>국내 유일의 자연유산 전문 전시관 천연기념물센터에서 교육 프로그램을 진행해보시길 바랍니다.</p>
-                <!-- TODO: 교육안내 외부 링크 주소 미정 -->
-                <a class="link-more" href="#">자세히보기 {{icon:arrow-right:icon--sm}}</a>
+                <!-- TODO: 교육안내 외부 링크 주소 미정 → 우선 행사안내(체험·교육 프로그램)로 연결 -->
+                <a class="link-more" href="./events.html">자세히보기 {{icon:arrow-right:icon--sm}}</a>
               </li>
               <li class="now-card">
                 <img src="./images/main/quick-notice.webp" width="149" height="145" alt="" loading="lazy" />
@@ -153,13 +153,13 @@
         <h2 class="section-title" id="news-title">뉴스</h2>
         <div class="news__bar">
           <div class="tabs" role="tablist" aria-label="뉴스 분류" data-news-tabs>
-            <button type="button" role="tab" class="tabs__tab" aria-selected="true" data-filter="all">전체</button>
-            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="notice">공지사항</button>
-            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="resources">일반자료실</button>
-            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="videos">영상자료실</button>
-            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="faq">자주묻는 질문</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="true" data-filter="all" data-href="./notice.html">전체</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="notice" data-href="./notice.html">공지사항</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="resources" data-href="./resources.html">일반자료실</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="videos" data-href="./videos.html">영상자료실</button>
+            <button type="button" role="tab" class="tabs__tab" aria-selected="false" data-filter="faq" data-href="./faq.html">자주묻는 질문</button>
           </div>
-          <a class="link-more news__more" href="./notice.html">더보기 {{icon:plus:icon--sm}}</a>
+          <a class="link-more news__more" href="./notice.html" data-news-more>더보기 {{icon:plus:icon--sm}}</a>
         </div>
         <ul class="news__list" data-news-list>
           <li class="news-card" data-cat="notice">
@@ -181,7 +181,7 @@
             </div>
           </li>
         </ul>
-        <p class="news__empty" data-news-empty hidden>해당 분류의 소식이 없습니다.</p>
+        <p class="news__empty" data-news-empty hidden>메인에 소개된 소식이 없습니다. <a class="text-blue" href="./notice.html" data-news-board>게시판 바로가기</a></p>
       </section>
 
       <!-- 4. 전시관 안내도 -->

@@ -311,8 +311,13 @@
 .modal__text { display: flex; flex-direction: column; gap: var(--gap-7); }
 .modal--notice .modal__actions { margin-top: auto; }
 .modal__close {
-  display: flex;
+  display: grid;
+  place-items: center;
+  flex: none; /* 모달이 flex 컬럼일 때 높이가 줄어들지 않도록 */
   margin: 0 0 0 auto;
+}
+.modal > * {
+  flex-shrink: 0;
 }
 .modal__body {
   display: flex;
@@ -379,6 +384,8 @@
   font-size: var(--fs-label-small);
   text-align: left;
 }
+.family__panel ul { display: flex; flex-direction: column; gap: var(--gap-3); }
+.family__panel a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .family__panel {
   padding: var(--padding-6);
   font-size: var(--fs-body-small);

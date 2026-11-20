@@ -3,59 +3,141 @@
     "id": "visit",
     "title": "관람정보·예약",
     "cells": [
-      { "title": "관람안내", "href": "visit-guide.html", "children": [
-        { "title": "단체관람 안내", "href": "group-visit.html" },
-        { "title": "단체관람 예약", "href": "group-visit.html#reservation" }
-      ] },
-      { "title": "해설안내", "href": "tour-guide.html", "children": [
-        { "title": "전시해설 안내", "href": "tour-guide.html" }
-      ] },
-      { "title": "교육안내", "href": "#", "external": true, "children": [
-        { "title": "교육안내와 일정", "href": "#", "external": true }
-      ] },
-      { "title": "행사안내", "href": "events.html" },
-      { "title": "예약(취소) 조회", "href": "reservation.html" }
+      {
+        "title": "관람안내",
+        "href": "visit-guide.html",
+        "children": [
+          {
+            "title": "단체관람 안내",
+            "href": "group-visit.html"
+          },
+          {
+            "title": "단체관람 예약",
+            "href": "group-visit.html#reservation"
+          }
+        ]
+      },
+      {
+        "title": "해설안내",
+        "href": "tour-guide.html",
+        "children": [
+          {
+            "title": "전시해설 안내",
+            "href": "tour-guide.html"
+          }
+        ]
+      },
+      {
+        "title": "교육안내",
+        "href": "events.html",
+        "children": [
+          {
+            "title": "교육안내와 일정",
+            "href": "events.html"
+          }
+        ]
+      },
+      {
+        "title": "행사안내",
+        "href": "events.html"
+      },
+      {
+        "title": "예약(취소) 조회",
+        "href": "reservation.html"
+      }
     ]
   },
   {
     "id": "exhibit",
     "title": "전시",
     "cells": [
-      { "title": "천연기념물 식물", "href": "exhibit-plant.html" },
-      { "title": "천연기념물 동물", "href": "exhibit-animal.html" },
-      { "title": "천연기념물 지질", "href": "exhibit-geology.html" },
-      { "title": "천연보호구역", "href": "exhibit-reserve.html" },
-      { "title": "명승", "href": "exhibit-scenic.html" },
-      { "title": "한반도의 자연유산", "href": "exhibit-heritage.html" },
-      { "title": "기획전시", "href": "special-exhibit.html" }
+      {
+        "title": "천연기념물 식물",
+        "href": "exhibit-plant.html"
+      },
+      {
+        "title": "천연기념물 동물",
+        "href": "exhibit-animal.html"
+      },
+      {
+        "title": "천연기념물 지질",
+        "href": "exhibit-geology.html"
+      },
+      {
+        "title": "천연보호구역",
+        "href": "exhibit-reserve.html"
+      },
+      {
+        "title": "명승",
+        "href": "exhibit-scenic.html"
+      },
+      {
+        "title": "한반도의 자연유산",
+        "href": "exhibit-heritage.html"
+      },
+      {
+        "title": "기획전시",
+        "href": "special-exhibit.html"
+      }
     ]
   },
   {
     "id": "news",
     "title": "소식·자료·참여",
     "cells": [
-      { "title": "공지사항", "href": "notice.html" },
-      { "title": "일반자료실", "href": "resources.html" },
-      { "title": "영상자료실", "href": "videos.html" },
-      { "title": "자원봉사자 안내", "href": "volunteer.html" },
-      { "title": "전시관 소식지", "href": "newsletter.html" }
+      {
+        "title": "공지사항",
+        "href": "notice.html"
+      },
+      {
+        "title": "일반자료실",
+        "href": "resources.html"
+      },
+      {
+        "title": "영상자료실",
+        "href": "videos.html"
+      },
+      {
+        "title": "자원봉사자 안내",
+        "href": "volunteer.html"
+      },
+      {
+        "title": "전시관 소식지",
+        "href": "newsletter.html"
+      }
     ]
   },
   {
     "id": "contact",
     "title": "문의·안내",
     "cells": [
-      { "title": "자연유산 검색", "href": "#", "external": true },
-      { "title": "자주하는 질문", "href": "faq.html" },
-      { "title": "온라인화상·채팅 상담", "href": "#", "external": true }
+      {
+        "title": "자연유산 검색",
+        "href": "https://www.heritage.go.kr",
+        "external": true
+      },
+      {
+        "title": "자주하는 질문",
+        "href": "faq.html"
+      },
+      {
+        "title": "온라인화상·채팅 상담",
+        "href": "faq.html"
+      }
     ]
   },
   {
     "id": "about",
     "title": "센터 소개",
     "cells": [
-      { "title": "종합안내도", "href": "info-overview.html" },
-      { "title": "조직 및 업무", "href": "org.html" }
+      {
+        "title": "종합안내도",
+        "href": "info-overview.html"
+      },
+      {
+        "title": "조직 및 업무",
+        "href": "org.html"
+      }
     ]
   }
 ]

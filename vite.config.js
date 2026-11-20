@@ -26,12 +26,13 @@ const svg = (name, cls = '') =>
   `<svg class="icon ${cls}" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${icons[name] ?? ''}</svg>`;
 
 // 메뉴 데이터(src/components/menu-data.json) → 빌드 시 정적 HTML로 변환
-const menu = JSON.parse(readFileSync(resolve(componentsDir, 'menu-data.json'), 'utf8'));
+const loadMenu = () => JSON.parse(readFileSync(resolve(componentsDir, 'menu-data.json'), 'utf8'));
 const attrs = (c) => (c.external ? ' target="_blank" rel="noopener"' : '');
 const extMark = (c) =>
   c.external ? `${svg('open-new-window', 'icon--sm')}<span class="sr-only">(새 창)</span>` : '';
 
 const renderMenu = (kind) => {
+  const menu = loadMenu(); // 개발 서버에서도 menu-data.json 수정이 바로 반영되도록 매번 읽음
   if (kind === 'nav') {
     return menu
       .map(

@@ -100,6 +100,8 @@ function initNews() {
   const tabs = [...document.querySelectorAll('[data-news-tabs] [role="tab"]')];
   const items = [...document.querySelectorAll('[data-news-list] .news-card')];
   const empty = document.querySelector('[data-news-empty]');
+  const more = document.querySelector('[data-news-more]');
+  const board = document.querySelector('[data-news-board]');
   if (!tabs.length) return;
   tabs.forEach((tab) =>
     tab.addEventListener('click', () => {
@@ -112,6 +114,10 @@ function initNews() {
         if (ok) shown += 1;
       });
       empty.hidden = shown > 0;
+      // 더보기·게시판 바로가기는 선택한 분류의 게시판으로 이동
+      const href = tab.dataset.href || './notice.html';
+      if (more) more.setAttribute('href', href);
+      if (board) board.setAttribute('href', href);
     }),
   );
 }
